@@ -1,0 +1,112 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="李嘉明"><meta name="copyright" content="李嘉明"><title></title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-对象的作用域和this指向问题"><span class="toc-number">1.</span> <span class="toc-text">title:对象的作用域和this指向问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象的概念"><span class="toc-number">2.</span> <span class="toc-text">面向对象的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向对象中添加属性-添加方法"><span class="toc-number">3.</span> <span class="toc-text">向对象中添加属性/添加方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举对象中的属性：for-in"><span class="toc-number">4.</span> <span class="toc-text">枚举对象中的属性：for in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域-Scope【重要】"><span class="toc-number">5.</span> <span class="toc-text">作用域 Scope【重要】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局作用域"><span class="toc-number">5.1.</span> <span class="toc-text">全局作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数作用域"><span class="toc-number">5.2.</span> <span class="toc-text">函数作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this"><span class="toc-number">6.</span> <span class="toc-text">this</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">李嘉明</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">48</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/"></a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">No title</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-21</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><hr>
+<h2 id="title-对象的作用域和this指向问题"><a href="#title-对象的作用域和this指向问题" class="headerlink" title="title:对象的作用域和this指向问题"></a>title:对象的作用域和this指向问题</h2><h2 id="面向对象的概念"><a href="#面向对象的概念" class="headerlink" title="面向对象的概念"></a>面向对象的概念</h2><p><strong>对象的作用是：封装信息</strong>。比如Student类里可以封装学生的姓名、年龄、成绩等。</p>
+<p>对象具有<strong>特征</strong>（属性）和<strong>行为</strong>（方法）。</p>
+<p>面向对象：可以创建自定义的类型、很好的支持继承和多态。</p>
+<p>面向对象的特征：封装、继承、多态。</p>
+<h2 id="向对象中添加属性-添加方法"><a href="#向对象中添加属性-添加方法" class="headerlink" title="向对象中添加属性/添加方法"></a>向对象中添加属性/添加方法</h2><p>首先创建一个对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+<p>向对象中添加属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.name = <span class="string">"孙悟空"</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br></pre></td></tr></table></figure>
+<p>对象的属性值可以是任何的数据类型，也可以是个<strong>函数</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'smyhvae'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.sayName);  <span class="comment">//没加括号，获取的是对象</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'-----------'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj.sayName());  <span class="comment">//加了括号，执行函数内容，并执行函数体的内容</span></span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<p><img src="http://img.smyhvae.com/20180314_2109.png" alt=""></p>
+<p><strong>函数和方法的区别：</strong></p>
+<p>如果一个函数作为一个对象的属性保存，那么我们称这个函数是这个对象的<strong>方法</strong>。调用这个函数就说调用对象的方法（method）。但是它只是名称上的区别，没有其他的区别。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调方法</span></span><br><span class="line">obj.sayName();</span><br><span class="line"></span><br><span class="line"><span class="comment">//调函数</span></span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
+<h2 id="枚举对象中的属性：for-in"><a href="#枚举对象中的属性：for-in" class="headerlink" title="枚举对象中的属性：for in"></a>枚举对象中的属性：for in</h2><p>语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> 变量 <span class="keyword">in</span> 对象) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解释：对象中有几个属性，循环体就会执行几次。每次执行时，会将对象中的<strong>每个属性的名字赋值给变量</strong>。</p>
+<p>举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> obj = &#123;</span></span><br><span class="line"><span class="javascript">			name: <span class="string">"smyhvae"</span>,</span></span><br><span class="line"><span class="undefined">			age: 26,</span></span><br><span class="line"><span class="javascript">			gender: <span class="string">"男"</span>,</span></span><br><span class="line"><span class="javascript">			address: <span class="string">"shenzhen"</span></span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">		<span class="comment">//枚举对象中的属性</span></span></span><br><span class="line"><span class="javascript">		<span class="keyword">for</span> (<span class="keyword">var</span> n <span class="keyword">in</span> obj) &#123;</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(<span class="string">"属性名:"</span> + n);</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(<span class="string">"属性值:"</span> + obj[n]);</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<p><img src="http://img.smyhvae.com/20180314_2125.png" alt=""></p>
+<h2 id="作用域-Scope【重要】"><a href="#作用域-Scope【重要】" class="headerlink" title="作用域 Scope【重要】"></a>作用域 Scope【重要】</h2><p>作用域指一个变量的作用的范围。在JS中一共有两种作用域：</p>
+<ul>
+<li><p>全局作用域</p>
+</li>
+<li><p>函数作用域</p>
+</li>
+</ul>
+<h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>直接编写在script标签中的JS代码，都在全局作用域。</p>
+<ul>
+<li><p>全局作用域在页面打开时创建，在页面关闭时销毁。</p>
+</li>
+<li><p>在全局作用域中有一个全局对象window，它代表的是一个浏览器的窗口，它由浏览器创建我们可以直接使用。</p>
+</li>
+</ul>
+<p>在全局作用域中：</p>
+<ul>
+<li><p>创建的变量都会作为window对象的属性保存。</p>
+</li>
+<li><p>创建的函数都会作为window对象的方法保存。</p>
+</li>
+</ul>
+<p>全局作用域中的变量都是全局变量，在页面的任意的部分都可以访问的到。</p>
+<p><strong>变量的声明提前：</strong></p>
+<p>使用var关键字声明的变量（ 比如 <code>var a = 1</code>），<strong>会在所有的代码执行之前被声明</strong>（但是不会赋值），但是如果声明变量时不是用var关键字（比如直接写<code>a = 1</code>），则变量不会被声明提前。</p>
+<p>举例1：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
+<p>打印结果：undefined</p>
+<p>举例2：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">a = <span class="number">123</span>;   <span class="comment">//此时a相当于window.a</span></span><br></pre></td></tr></table></figure>
+<p>程序会报错：</p>
+<p><img src="http://img.smyhvae.com/20180314_2136.png" alt=""></p>
+<p><strong>函数的声明提前：</strong></p>
+<ul>
+<li>使用<code>函数声明</code>的形式创建的函数<code>function foo(){}</code>，<strong>会被声明提前</strong>。</li>
+</ul>
+<p>也就是说，它会在所有的代码执行之前就被创建，所以我们可以在函数声明之前，调用函数。</p>
+<ul>
+<li>使用<code>函数表达式</code>创建的函数<code>var foo = function(){}</code>，<strong>不会被声明提前</strong>，所以不能在声明前调用。</li>
+</ul>
+<p>很好理解，因为此时foo被声明了，且为undefined，并没有给其赋值<code>function(){}</code>。</p>
+<p>所以说，下面的例子，会报错：</p>
+<p><img src="http://img.smyhvae.com/20180314_2145.png" alt=""></p>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p><strong>调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁。</strong></p>
+<p>每调用一次函数就会创建一个新的函数作用域，他们之间是互相独立的。</p>
+<p>在函数作用域中可以访问到全局作用域的变量，在全局作用域中无法访问到函数作用域的变量。</p>
+<p><strong>作用域的上下级关系：</strong></p>
+<p>当在函数作用域操作一个变量时，它会先在自身作用域中寻找，如果有就直接使用（<strong>就近原则</strong>）。如果没有则向上一级作用域中寻找，直到找到全局作用域；如果全局作用域中依然没有找到，则会报错ReferenceError。</p>
+<p>在函数中要访问全局变量可以使用window对象。（比如说，全局作用域和函数作用域都定义了变量a，如果想访问全局变量，可以使用<code>window.a</code>）</p>
+<p><strong>提醒1：</strong></p>
+<p>在函数作用域也有声明提前的特性：</p>
+<ul>
+<li><p>使用var关键字声明的变量，会在函数中所有的代码执行之前被声明</p>
+</li>
+<li><p>函数声明也会在函数中所有的代码执行之前执行</p>
+</li>
+</ul>
+<p>因此，在函数中，没有var声明的变量都会成为<strong>全局变量</strong>，而且并不会提前声明。</p>
+<p>举例1：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    a = <span class="number">2</span>;     <span class="comment">// 此处的a相当于window.a</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line"><span class="built_in">console</span>.log(a);   <span class="comment">//打印结果是2</span></span><br></pre></td></tr></table></figure>
+<p>上方代码中，foo()的打印结果是<code>1</code>。如果去掉第一行代码，打印结果是<code>Uncaught ReferenceError: a is not defined</code></p>
+<p><strong>提醒2：</strong>定义形参就相当于在函数作用域中声明了变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function fun6(e) &#123;</span><br><span class="line">    console.log(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun6();  //打印结果为 undefined</span><br><span class="line">fun6(123);//打印结果为123</span><br></pre></td></tr></table></figure>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>解析器在调用函数每次都会向函数内部传递进一个隐含的参数，这个隐含的参数就是this，this指向的是一个对象，这个对象我们称为函数执行的 上下文对象。</p>
+<p>根据函数的调用方式的不同，this会指向不同的对象：【重要】</p>
+<ul>
+<li><p>1.以函数的形式调用时，this永远都是window。比如<code>fun();</code>相当于<code>window.fun();</code></p>
+</li>
+<li><p>2.以方法的形式调用时，this是调用方法的那个对象</p>
+</li>
+<li><p>3.以构造函数的形式调用时，this是新创建的那个对象</p>
+</li>
+<li><p>4.使用call和apply调用时，this是指定的那个对象</p>
+</li>
+</ul>
+<p>针对第1和第2条的举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    name: <span class="string">"smyh"</span>,</span><br><span class="line">    sayName: fun</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    name: <span class="string">"vae"</span>,</span><br><span class="line">    sayName: fun</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"全局的name属性"</span>;</span><br><span class="line"><span class="comment">//obj.sayName();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//以函数形式调用，this是window</span></span><br><span class="line"><span class="comment">//fun();       //可以理解成 window.fun()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//以方法的形式调用，this是调用方法的对象</span></span><br><span class="line">obj2.sayName();</span><br></pre></td></tr></table></figure>
+<p>打印结果：<code>vae</code>。</p>
+<p><strong>箭头函数中this的指向</strong>：</p>
+<p>ES6中的箭头函数并不会使用上面四条标准的绑定规则，而是会继承外层函数调用的this绑定（无论this绑定到什么）。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">李嘉明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2018/12/21/03-JavaScript基础/08-对象、作用域和this/">http://yoursite.com/2018/12/21/03-JavaScript基础/08-对象、作用域和this/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/21/03-JavaScript基础/09-对象的创建、构造函数和原型/"><i class="fa fa-chevron-left">  </i><span></span></a></div><div class="next-post pull-right"><a href="/2018/12/21/03-JavaScript基础/07-函数/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By 李嘉明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>

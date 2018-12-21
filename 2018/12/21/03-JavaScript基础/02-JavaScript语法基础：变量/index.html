@@ -1,0 +1,253 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="李嘉明"><meta name="copyright" content="李嘉明"><title></title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-JS基础语法——变量"><span class="toc-number">1.</span> <span class="toc-text">title:JS基础语法——变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字面量：数字和字符串"><span class="toc-number">2.</span> <span class="toc-text">字面量：数字和字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">2.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量"><span class="toc-number">3.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的概念"><span class="toc-number">3.1.</span> <span class="toc-text">变量的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的定义和赋值"><span class="toc-number">3.2.</span> <span class="toc-text">变量的定义和赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的命名规范"><span class="toc-number">3.3.</span> <span class="toc-text">变量的命名规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标识符"><span class="toc-number">4.</span> <span class="toc-text">标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的数据类型"><span class="toc-number">5.</span> <span class="toc-text">变量的数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-字符串"><span class="toc-number">6.</span> <span class="toc-text">String 字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#补充知识：typeof-运算符"><span class="toc-number">6.1.</span> <span class="toc-text">补充知识：typeof 运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数值型：Number"><span class="toc-number">7.</span> <span class="toc-text">数值型：Number</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#连字符和加号的区别"><span class="toc-number">7.1.</span> <span class="toc-text">连字符和加号的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式转换"><span class="toc-number">7.2.</span> <span class="toc-text">隐式转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#布尔值：Boolean"><span class="toc-number">8.</span> <span class="toc-text">布尔值：Boolean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null和undefined"><span class="toc-number">9.</span> <span class="toc-text">null和undefined</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null：空值"><span class="toc-number">9.1.</span> <span class="toc-text">null：空值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined：未定义"><span class="toc-number">9.2.</span> <span class="toc-text">undefined：未定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量值的传递（赋值）"><span class="toc-number">10.</span> <span class="toc-text">变量值的传递（赋值）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的公众号"><span class="toc-number">11.</span> <span class="toc-text">我的公众号</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">李嘉明</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">48</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/"></a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">No title</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-21</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><hr>
+<h2 id="title-JS基础语法——变量"><a href="#title-JS基础语法——变量" class="headerlink" title="title:JS基础语法——变量"></a>title:JS基础语法——变量</h2><h2 id="字面量：数字和字符串"><a href="#字面量：数字和字符串" class="headerlink" title="字面量：数字和字符串"></a>字面量：数字和字符串</h2><p>“字面量”即<strong>常量</strong>，是固定值，不可改变。看见什么，它就是什么。</p>
+<p>简单的字面量有2种：数字、字符串。</p>
+<p>（1）数值的字面量非常简单，写上去就行了，不需要任何的符号。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>	alert(<span class="number">886</span>);  <span class="comment">//886是数字，所以不需要加引号。</span></span><br></pre></td></tr></table></figure>
+<p>（2）字符串的字面量也很简单，但一定要加上引号。可以是单词、句子等。</p>
+<p>温馨提示：100是数字，”100”是字符串。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>字面量都可以直接使用，但是我们一般不会直接使用字面量。</p>
+<p>如果直接使用字面量的话，非常麻烦。比如说，多个地方要用到同一个字面量，还不如事先定义一个变量，用来保存字面量。</p>
+<p>变量更加方便我们使用，所以在开发中都是通过变量去保存一个字面量，而不会直接使用字面量。</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="变量的概念"><a href="#变量的概念" class="headerlink" title="变量的概念"></a>变量的概念</h3><p><strong>变量</strong>：变量可以用来保存字面量，而且变量的值可以任意改变。</p>
+<h3 id="变量的定义和赋值"><a href="#变量的定义和赋值" class="headerlink" title="变量的定义和赋值"></a>变量的定义和赋值</h3><p>在js中使用<code>var</code>关键字来声明一个变量。</p>
+<p>变量举例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<p>如下图所示：</p>
+<p><img src="http://img.smyhvae.com/20180116_2020.png" alt=""></p>
+<p>var是英语“variant”变量的缩写。后面要加一个空格，空格后面的东西就是“变量名”：</p>
+<ul>
+<li><p>定义变量：var就是一个<strong>关键字</strong>，用来定义变量。所谓关键字，就是有特殊功能的小词语。关键字后面一定要有空格隔开。</p>
+</li>
+<li><p>变量的赋值：等号表示<strong>赋值</strong>，将等号右边的值，赋给左边的变量。</p>
+</li>
+<li><p>变量名：我们可以给变量任意的取名字。</p>
+</li>
+</ul>
+<p>PS：<strong>在JavaScript中，永远都是用var来定义变量</strong>（在ES6 之前），这和C、Java等语言不同。</p>
+<p>变量要先定义，才能使用。比如，我们不设置变量，直接输出：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="built_in">console</span>.log(a);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>控制台将会报错：</p>
+<p><img src="http://img.smyhvae.com/20180116_2040.png" alt=""></p>
+<p>正确写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;   <span class="comment">// 定义</span></span><br><span class="line">a = <span class="number">100</span>;  <span class="comment">//赋值</span></span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//输出100</span></span><br></pre></td></tr></table></figure>
+<p>有经验的程序员，会把定义和赋值写在一起：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;    <span class="comment">//定义，并且赋值100</span></span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//输出100</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量的命名规范"><a href="#变量的命名规范" class="headerlink" title="变量的命名规范"></a>变量的命名规范</h3><p>变量名有命名规范：只能由英语字母、数字、下划线、美元符号$构成，且不能以数字开头，并且不能是JavaScript保留字。</p>
+<p>下列的单词，叫做保留字，就是说不允许当做变量名，不用记：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">abstract、boolean、byte、char、class、const、debugger、double、enum、export、extends、final、float、goto</span><br><span class="line">implements、import、int、interface、long、native、package、private、protected、public、short、static、super、synchronized、throws、transient、volatile</span><br></pre></td></tr></table></figure>
+<p>大写字母是可以使用的，并且大小写敏感。也就是说A和a是两个变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> A = <span class="number">250</span>;    <span class="comment">//变量1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">888</span>;    <span class="comment">//变量2</span></span><br></pre></td></tr></table></figure>
+<p>我们来整理一下<strong>变量的命名规则</strong>：</p>
+<p>1.建议用驼峰命名规则：getElementById/matherAndFather/aaaOrBbbAndCcc</p>
+<p>2.变量命名必须以字母或是下标符号”_”或者”$”为开头。</p>
+<p>3.变量名长度不能超过255个字符。</p>
+<p>4.变量名中不允许使用空格，首个字不能为数字。</p>
+<p>5.不用使用脚本语言中保留的<strong>关键字</strong>及<strong>保留字</strong>作为变量名。</p>
+<p>6.变量名区分大小写(javascript是区分大小写的语言)。</p>
+<p>7.汉语可以作为变量名。但是不建议使用，因为 low。</p>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p><strong>标识符</strong>：在JS中所有的可以由我们<strong>自主命名</strong>的都可以称之为标识符。</p>
+<p>例如：变量名、函数名、属性名都是属于标识符。</p>
+<p><strong>标识符的命名规则</strong>和变量的命令规则是一样的。看上面一段就可以了。</p>
+<p>重点要注意的是：标识符不能使用脚本语言中保留的<strong>关键字</strong>及<strong>保留字</strong>。如下。</p>
+<p><strong>关键字</strong>：</p>
+<p><img src="http://img.smyhvae.com/20180714_1421.png" alt=""></p>
+<p><strong>保留字</strong>：</p>
+<p><img src="http://img.smyhvae.com/20180714_1422.png" alt=""></p>
+<p><strong>其他不建议使用的标识符</strong>：</p>
+<p><img src="http://img.smyhvae.com/20180714_1423.png" alt=""></p>
+<h2 id="变量的数据类型"><a href="#变量的数据类型" class="headerlink" title="变量的数据类型"></a>变量的数据类型</h2><p>变量里面能够存储数字、字符串等。变量会自动的根据存储内容的类型不同，来决定自己的类型。</p>
+<p><strong>在JS中一共有六种数据类型</strong>：</p>
+<ul>
+<li><p><strong>基本数据类型（值类型）</strong>：String 字符串、Number 数值、Boolean 布尔值、Null 空值、Undefined 未定义。</p>
+</li>
+<li><p><strong>引用数据类型（引用类型）</strong>：Object 对象。</p>
+</li>
+</ul>
+<p>注意：内置对象function、Array、Date、RegExp、Error等都是属于Object类型。也就是说，除了那五种基本数据类型之外，其他的，都称之为 Object类型。</p>
+<blockquote>
+<p>面试问：引用数据类型有几种？</p>
+</blockquote>
+<blockquote>
+<p>面试答：只有一种，即 Object 类型。</p>
+</blockquote>
+<p><strong>数据类型之间最大的区别</strong>：</p>
+<ul>
+<li><p>基本数据类型：参数赋值的时候，传数值。</p>
+</li>
+<li><p>引用数据类型：参数赋值的时候，传地址（修改的同一片内存空间）。</p>
+</li>
+</ul>
+<p>接下来，我们详细讲一下基本数据类型。</p>
+<h2 id="String-字符串"><a href="#String-字符串" class="headerlink" title="String 字符串"></a>String 字符串</h2><p>来看个示例。现有如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"abcde"</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"生命壹号"</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="string">"123123"</span>;</span><br><span class="line"><span class="keyword">var</span> d = <span class="string">"哈哈哈哈哈"</span>;</span><br><span class="line"><span class="keyword">var</span> e = <span class="string">""</span>;     <span class="comment">//空字符串</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> d);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> e);</span><br></pre></td></tr></table></figure>
+<p>控制台输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sting</span><br><span class="line">sting</span><br><span class="line">sting</span><br><span class="line">sting</span><br><span class="line">sting</span><br></pre></td></tr></table></figure>
+<p>注意事项：</p>
+<p>（1）在JS中，字符串需要使用引号引起来。使用双引号或单引号都可以，但是不要混着用。比如下面这样写是不可以的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var str = `hello&quot;;</span><br></pre></td></tr></table></figure>
+<p>（2）引号不能嵌套：双引号里不能再放双引号，单引号里不能再放单引号。但是单引号里可以嵌套双引号。</p>
+<p>（3）<strong>转义字符</strong>：在字符串中我们可以使用<code>\</code>作为转义字符，当表示一些特殊符号时可以使用<code>\</code>进行转义。</p>
+<ul>
+<li><p><code>\&quot;</code> 表示 <code>&quot;</code></p>
+</li>
+<li><p><code>\&#39;</code> 表示 <code>&#39;</code></p>
+</li>
+<li><p><code>\n</code> 表示换行</p>
+</li>
+<li><p><code>\r</code> 表示回车</p>
+</li>
+<li><p><code>\t</code> 表示制表符</p>
+</li>
+<li><p><code>\b</code> 表示空格</p>
+</li>
+<li><p><code>\\</code> 表示<code>\</code></p>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"我说:\"今天\t天气真不错！\""</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">"\\\\\\"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1);</span><br><span class="line"><span class="built_in">console</span>.log(str2);</span><br></pre></td></tr></table></figure>
+<p>上方代码的打印结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我说:&quot;今天	天气真不错！&quot;</span><br><span class="line">\\\</span><br></pre></td></tr></table></figure>
+<p>将其他数值转换为字符串有三种方式：</p>
+<ul>
+<li><p>拼串</p>
+</li>
+<li><p>toString()</p>
+</li>
+<li><p>String()</p>
+</li>
+</ul>
+<h3 id="补充知识：typeof-运算符"><a href="#补充知识：typeof-运算符" class="headerlink" title="补充知识：typeof 运算符"></a>补充知识：typeof 运算符</h3><p><code>typeof()</code>表示“<strong>获取变量的类型</strong>”，返回的是小写，语法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof 变量</span><br></pre></td></tr></table></figure>
+<p><strong>返回结果</strong>：</p>
+<ul>
+<li><p><code>typeof 数值</code>的返回结果：number</p>
+</li>
+<li><p><code>typeof 字符串</code>的返回结果：string</p>
+</li>
+<li><p><code>typeof 布尔型</code>的返回结果：boolean</p>
+</li>
+<li><p><code>typeof undefined</code>的返回结果：undefined</p>
+</li>
+<li><p><code>typeof null</code>的返回结果：object</p>
+</li>
+</ul>
+<p>在JavaScript中，只要是数，就是 number 数值型的。无论整浮、浮点数（即小数）、无论大小、无论正负，都是 number 类型的。</p>
+<h2 id="数值型：Number"><a href="#数值型：Number" class="headerlink" title="数值型：Number"></a>数值型：Number</h2><p>在JS中所有的数值都是Number类型，包括整数和浮点数（小数）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;	<span class="comment">//定义了一个变量a，并且赋值100</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);	<span class="comment">//输出a变量的类型</span></span><br></pre></td></tr></table></figure>
+<p>上方代码的输出结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">number</span><br></pre></td></tr></table></figure>
+<p><strong>数值范围：</strong></p>
+<p>由于内存的限制，ECMAScript 并不能保存世界上所有的数值。</p>
+<ul>
+<li><p>最大值：<code>Number.MAX_VALUE</code>，这个值为： 1.7976931348623157e+308</p>
+</li>
+<li><p>最小值：<code>Number.MIN_VALUE</code>，这个值为： 5e-324</p>
+</li>
+</ul>
+<p>如果使用Number表示的变量超过了最大值，则会返回Infinity。</p>
+<ul>
+<li><p>无穷大（正无穷）：Infinity</p>
+</li>
+<li><p>无穷小（负无穷）：-Infinity</p>
+</li>
+</ul>
+<p>注意：<code>typeof Infinity</code>的返回结果是number。</p>
+<p><strong>NaN和isNaN()函数：</strong></p>
+<p>（1）NaN：是一个特殊的数字，表示Not a Number，非数值。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"abc"</span> / <span class="number">18</span>);  <span class="comment">//结果是NaN</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"abc"</span> * <span class="string">"abcd"</span>); <span class="comment">//按理说，字符串相乘是没有结果的，但如果你非要让JS去算，它就一定会给你一个结果。结果是NaN</span></span><br></pre></td></tr></table></figure>
+<p>注意：<code>typeof NaN</code>的返回结果是number。</p>
+<p>Undefined和任何数值计算的结果为NaN。NaN 与任何值都不相等，包括 NaN 本身。</p>
+<p>（2）isNaN() :任何不能被转换为数值的值，都会让这个函数返回 true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>(<span class="literal">NaN</span>);<span class="comment">// true</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="string">"blue"</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="number">123</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p><strong>浮点数的运算</strong>：</p>
+<p>在JS中，整数的运算<strong>基本</strong>可以保证精确；但是<strong>小数的运算，可能会得到一个不精确的结果</strong>。所以，千万不要使用JS进行对精确度要求比较高的运算。</p>
+<p>如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0.1</span> + <span class="number">0.2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//打印结果：0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+<p>上方代码中，打印结果并不是0.3，而是0.30000000000000004。</p>
+<p>我们知道，所有的运算都要转换成二进制去计算，然而，二进制是无法精确表示1/10的。因此存在小数的计算不精确的问题。</p>
+<h3 id="连字符和加号的区别"><a href="#连字符和加号的区别" class="headerlink" title="连字符和加号的区别"></a>连字符和加号的区别</h3><p>键盘上的<code>+</code>可能是连字符，也可能是数字的加号。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;我&quot; + &quot;爱&quot; + &quot;你&quot;);	//连字符，把三个独立的汉字，连接在一起了</span><br><span class="line">console.log(&quot;我+爱+你&quot;);			//原样输出</span><br><span class="line">console.log(1+2+3);				//输出6</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">我爱你</span><br><span class="line">我+爱+你</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong>：如果加号两边<strong>都是</strong>数值，此时是加。否则，就是连字符（用来连接字符串）。</p>
+<p>举例1：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"1"</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a + b);</span><br></pre></td></tr></table></figure>
+<p>控制台输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">12</span><br></pre></td></tr></table></figure>
+<p>举例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">var b = 2;</span><br><span class="line">console.log(&quot;a&quot; + b);	//&quot;a&quot;就不是变量了！所以就是&quot;a&quot;+2 输出a2</span><br></pre></td></tr></table></figure>
+<p>控制台输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a2</span><br></pre></td></tr></table></figure>
+<p>于是我们明白了，在变量中加入字符串进行拼接，可以被同化为字符串。【重要】</p>
+<h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p>我们知道，<code>&quot;2&quot;+1</code>得到的结果其实是字符串，但是<code>&quot;2&quot;-1</code>得到的结果却是数值1，这是因为计算机自动帮我们进行了“<strong>隐式转换</strong>”。</p>
+<p>也就是说，<code>-</code>、<code>*</code>、<code>/</code>、<code>%`</code>这几个符号会自动进行隐式转换。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"4"</span> + <span class="number">3</span> - <span class="number">6</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">37</span></span><br></pre></td></tr></table></figure>
+<p>虽然程序可以对<code>-</code>、<code>*</code>、<code>/</code>、<code>%`</code>这几个符号自动进行“隐式转换”；但作为程序员，我们最好自己完成转换，方便程序的可读性。</p>
+<h2 id="布尔值：Boolean"><a href="#布尔值：Boolean" class="headerlink" title="布尔值：Boolean"></a>布尔值：Boolean</h2><p>true 和 fase。主要用来做逻辑判断。</p>
+<p>布尔值直接使用就可以了，千万不要加上引号。</p>
+<p>代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br></pre></td></tr></table></figure>
+<p>控制台输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boolean</span><br></pre></td></tr></table></figure>
+<h2 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined"></a>null和undefined</h2><h3 id="null：空值"><a href="#null：空值" class="headerlink" title="null：空值"></a><code>null</code>：空值</h3><p>专门用来表示一个为空的<strong>对象</strong>（例如：<code>var a = null</code>）。注意，专门用来表示<strong>空对象</strong>。</p>
+<ul>
+<li>Null类型的值只有一个，就是null。比如：<code>var a = null</code>。</li>
+</ul>
+<ul>
+<li>使用 typeof 检查一个null值时，会返回object。</li>
+</ul>
+<h3 id="undefined：未定义"><a href="#undefined：未定义" class="headerlink" title="undefined：未定义"></a><code>undefined</code>：未定义</h3><p><strong>声明</strong>了一个变量，但是没有<strong>赋值</strong>（例如：<code>var a;</code>），此时它的值就是undefined。</p>
+<ul>
+<li><p>Undefined类型的值只有一个，就是undefind</p>
+</li>
+<li><p>使用 type of 检查一个undefined时，会返回undefined。</p>
+</li>
+</ul>
+<p>null和undefined有最大的相似性。看看null == undefined的结果(true)也就更加能说明这点。</p>
+<p>但是null === undefined的结果(false)。它们虽然相似，但还是有区别的，其中一个区别是：和数字运算时，10 + null结果为：10；10 + undefined结果为：NaN。</p>
+<ul>
+<li><p>任何数据类型和undefined运算都是NaN;</p>
+</li>
+<li><p>任何值和null运算，null可看做0运算。</p>
+</li>
+</ul>
+<h2 id="变量值的传递（赋值）"><a href="#变量值的传递（赋值）" class="headerlink" title="变量值的传递（赋值）"></a>变量值的传递（赋值）</h2><p>语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = b;</span><br></pre></td></tr></table></figure>
+<p>把b的值赋给a，b不变。</p>
+<p>将等号右边的值，赋给左边的变量；等号右边的变量，值不变。</p>
+<p>来做几个题目。</p>
+<p>举例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">					 	//a		b       c</span><br><span class="line">var a = 1;              //1</span><br><span class="line">var b = 2;              //1     2</span><br><span class="line">var c = 3;              //1     2       3</span><br><span class="line">a = b + c;              //5     2       3</span><br><span class="line">b = c - a;              //5     -2      3</span><br><span class="line">c = a * b;              //5     -2      -10</span><br><span class="line">console.log(a);</span><br><span class="line">console.log(b);</span><br><span class="line">console.log(c);</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">-2</span><br><span class="line">-10</span><br></pre></td></tr></table></figure>
+<p>举例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">						//a    b     c</span><br><span class="line">var a = 1;</span><br><span class="line">var b = 2;</span><br><span class="line">var c = 3;              //1     2     3</span><br><span class="line">a = a + b;              //3     2     3</span><br><span class="line">b = b + a;              //3     5     3</span><br><span class="line">c = c + b;              //3     5     8</span><br><span class="line">console.log(a);  //3</span><br><span class="line">console.log(b);  //5</span><br><span class="line">console.log(c);  //8</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">5</span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+<p>举例3：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">				    //a       b</span><br><span class="line">var a = &quot;1&quot;;</span><br><span class="line">var b = 2;          //&quot;1&quot;     2</span><br><span class="line">a = a + b;          //&quot;12&quot;    2</span><br><span class="line">b = b + a;          //&quot;12&quot;    &quot;212&quot;</span><br><span class="line">console.log(a);     //输出12</span><br><span class="line">console.log(b);     //输出212</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">12</span><br><span class="line">212</span><br></pre></td></tr></table></figure>
+<p>举例4：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">				  //a         b</span><br><span class="line">var a = &quot;1&quot;;</span><br><span class="line">var b = 2;</span><br><span class="line">a = b + a;       //&quot;21&quot;       2</span><br><span class="line">b = b + a;       //&quot;21&quot;       &quot;221&quot;</span><br><span class="line">console.log(a);  //21</span><br><span class="line">console.log(b)   //221</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">21</span><br><span class="line">221</span><br></pre></td></tr></table></figure>
+<p>举例5：（这个例子比较特殊，字符串减去数字）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;3&quot;;</span><br><span class="line">var b = 2;</span><br><span class="line">console.log(a-b);</span><br></pre></td></tr></table></figure>
+<p>效果：（注意，字符串 - 数值 = 数值）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+<h2 id="我的公众号"><a href="#我的公众号" class="headerlink" title="我的公众号"></a>我的公众号</h2><p>想学习<font color="#0000ff"><strong>代码之外的软技能</strong></font>？不妨关注我的微信公众号：<strong>千古壹号</strong>（id：<code>qianguyihao</code>）。</p>
+<p>扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：</p>
+<p><img src="http://img.smyhvae.com/2016040102.jpg" alt=""></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">李嘉明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2018/12/21/03-JavaScript基础/02-JavaScript语法基础：变量/">http://yoursite.com/2018/12/21/03-JavaScript基础/02-JavaScript语法基础：变量/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/21/03-JavaScript基础/03-JavaScript语法基础：强制类型转换/"><i class="fa fa-chevron-left">  </i><span></span></a></div><div class="next-post pull-right"><a href="/2018/12/21/03-JavaScript基础/01-JavaScript语法基础：JS简介/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By 李嘉明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>

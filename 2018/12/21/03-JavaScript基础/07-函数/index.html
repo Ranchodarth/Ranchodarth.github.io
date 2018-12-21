@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="李嘉明"><meta name="copyright" content="李嘉明"><title></title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-JS——function"><span class="toc-number">1.</span> <span class="toc-text">title:JS——function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数-function"><span class="toc-number">2.</span> <span class="toc-text">函数 function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步：函数的定义"><span class="toc-number">2.1.</span> <span class="toc-text">第一步：函数的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步：函数的调用"><span class="toc-number">2.2.</span> <span class="toc-text">第二步：函数的调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的参数：形参和实参"><span class="toc-number">3.</span> <span class="toc-text">函数的参数：形参和实参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的返回值"><span class="toc-number">3.1.</span> <span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数名、函数体和函数加载问题（重要，请记住）"><span class="toc-number">3.2.</span> <span class="toc-text">函数名、函数体和函数加载问题（重要，请记住）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回调函数"><span class="toc-number">3.3.</span> <span class="toc-text">回调函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fn-和-fn-的区别【重要】"><span class="toc-number">4.</span> <span class="toc-text">fn()  和 fn 的区别【重要】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#立即执行函数"><span class="toc-number">5.</span> <span class="toc-text">立即执行函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arguments"><span class="toc-number">6.</span> <span class="toc-text">arguments</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">李嘉明</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">48</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/"></a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">No title</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-21</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><hr>
+<h2 id="title-JS——function"><a href="#title-JS——function" class="headerlink" title="title:JS——function"></a>title:JS——function</h2><h2 id="函数-function"><a href="#函数-function" class="headerlink" title="函数 function"></a>函数 function</h2><p>函数：就是将一些语句（功能）进行<strong>封装</strong>，然后通过<strong>调用</strong>的形式，执行这些语句。</p>
+<ul>
+<li><p><strong>函数也是一个对象</strong></p>
+</li>
+<li><p>使用<code>typeof</code>检查一个函数对象时，会返回function</p>
+</li>
+</ul>
+<p><strong>函数的作用：</strong></p>
+<ul>
+<li><p>将大量重复的语句写在函数里，以后需要这些语句的时候，可以直接调用函数，避免重复劳动。</p>
+</li>
+<li><p>简化编程，让编程模块化。</p>
+</li>
+</ul>
+<p>先来看个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"你好"</span>);</span><br><span class="line">sayHello();		<span class="comment">//调用函数</span></span><br><span class="line"><span class="comment">//定义函数：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"欢迎"</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"welcome"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们在实际开发中很少使用构造函数来创建一个函数对象。</p>
+<h3 id="第一步：函数的定义"><a href="#第一步：函数的定义" class="headerlink" title="第一步：函数的定义"></a>第一步：函数的定义</h3><p><strong>方式一</strong>：使用<code>函数声明</code>来创建一个函数。语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">[形参<span class="number">1</span>,形参<span class="number">2.</span>..形参N]</span>)</span>&#123;</span><br><span class="line">	语句...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解释如下：</p>
+<ul>
+<li><p>function：是一个关键字。中文是“函数”、“功能”。</p>
+</li>
+<li><p>函数名字：命名规定和变量的命名规定一样。只能是字母、数字、下划线、美元符号，不能以数字开头。</p>
+</li>
+<li><p>参数：后面有一对小括号，里面是放参数用的。</p>
+</li>
+<li><p>大括号里面，是这个函数的语句。</p>
+</li>
+</ul>
+<p>PS：方法写完之后，我们在方法的前面输入<code>/**</code>，然后回车，会发现，注释的格式会自动补齐。</p>
+<p><strong>方式二</strong>：使用<code>函数表达式</code>来创建一个函数。语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名  = <span class="function"><span class="keyword">function</span>(<span class="params">[形参<span class="number">1</span>,形参<span class="number">2.</span>..形参N]</span>)</span>&#123;</span><br><span class="line">	语句....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"我是匿名函数中封装的代码"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="第二步：函数的调用"><a href="#第二步：函数的调用" class="headerlink" title="第二步：函数的调用"></a>第二步：函数的调用</h3><p>函数调用的语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名字();</span><br></pre></td></tr></table></figure>
+<h2 id="函数的参数：形参和实参"><a href="#函数的参数：形参和实参" class="headerlink" title="函数的参数：形参和实参"></a>函数的参数：形参和实参</h2><p>函数的参数包括形参和实参。来看下面的图就懂了：</p>
+<p><img src="http://img.smyhvae.com/20180118_1130.png" alt=""></p>
+<p>假设我们定义一个求和的函数。</p>
+<p><strong>形参：</strong></p>
+<ul>
+<li><p>可以在函数的<code>()</code>中来指定一个或多个形参。</p>
+</li>
+<li><p>多个形参之间使用<code>,</code>隔开，声明形参就相当于在函数内部声明了对应的变量，但是并不赋值。</p>
+</li>
+</ul>
+<p><strong>实参</strong>：</p>
+<ul>
+<li><p>在调用函数时，可以在()中指定实参。</p>
+</li>
+<li><p>实参将会赋值给函数中对应的形参。</p>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sum(<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">sum(<span class="string">"3"</span>,<span class="number">4</span>);</span><br><span class="line">sum(<span class="string">"Hello"</span>,<span class="string">"World"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数：求和</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>控制台输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">34</span><br><span class="line">helloworld</span><br></pre></td></tr></table></figure>
+<p><strong>实参的类型：</strong></p>
+<p>函数的实参可以是任意的数据类型。</p>
+<p>调用函数时解析器不会检查实参的类型，所以要注意，是否有可能会接收到非法的参数，如果有可能则需要对参数进行类型的检查。</p>
+<p><strong>实参的数量：</strong></p>
+<p>调用函数时，解析器也不会检查实参的数量：</p>
+<ul>
+<li><p>多余实参不会被赋值</p>
+</li>
+<li><p>如果实参的数量少于形参的数量，则没有对应实参的形参将是undefined。例如：</p>
+</li>
+</ul>
+<p><img src="http://img.smyhvae.com/20180314_2030.png" alt=""></p>
+<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">3</span>, <span class="number">4</span>));</span><br><span class="line"><span class="comment">//函数：求和</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>return的作用是结束方法。</p>
+<p>注意：</p>
+<ul>
+<li><p>return后的值将会会作为函数的执行结果返回，可以定义一个变量，来接收该结果。</p>
+</li>
+<li><p>在函数中return后的语句都不会执行（函数在执行完 return 语句之后停止并立即退出）</p>
+</li>
+<li><p>如果return语句后不跟任何值，就相当于返回一个undefined</p>
+</li>
+<li><p>如果函数中不写return，则也会返回undefined</p>
+</li>
+<li><p>返回值可以是任意的数据类型，可以是对象，也可以是函数。</p>
+</li>
+</ul>
+<h3 id="函数名、函数体和函数加载问题（重要，请记住）"><a href="#函数名、函数体和函数加载问题（重要，请记住）" class="headerlink" title="函数名、函数体和函数加载问题（重要，请记住）"></a>函数名、函数体和函数加载问题（重要，请记住）</h3><p>我们要记住：<strong>函数名 == 整个函数</strong>。举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn) == <span class="built_in">console</span>.log(<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">1</span>)&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义fn方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="number">1</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们知道，当我们在调用一个函数时，通常使用<code>函数()</code>这种格式；但此时，我们是直接使用<code>函数</code>这种格式，它的作用相当于整个函数。</p>
+<p><strong>函数的加载问题</strong>：JS加载的时候，只加载函数名，不加载函数体。所以如果想使用内部的成员变量，需要调用函数。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>我们知道，当函数自己调用自己时，称之为递归。本段来讲一下回调。</p>
+<p>回调：<strong>函数作为参数</strong>，进行传递和使用，称之为<strong>回调</strong>。</p>
+<p>举个最简单的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fn(test);   <span class="comment">//回调test这个函数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    a();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我是被回调的函数"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果：我是被回调的函数。</p>
+<p><strong>什么情况下使用回调函数：</strong></p>
+<p>回调函数一般是用于<strong>定义一个规则</strong>。因为我们无法通过传递一个变量来传递规则。</p>
+<p>换而言之：当我们需要<strong>传递规则的时候，必须使用回调</strong>。规则的传递只能通过函数来实现，无法通过变量实现。</p>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn(<span class="number">12</span>,<span class="number">3</span>,test1));    <span class="comment">//注意第三个参数是函数名</span></span><br><span class="line"><span class="built_in">console</span>.log(fn(<span class="number">12</span>,<span class="number">3</span>,test2));    <span class="comment">//注意第三个参数是函数名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个通用规则（包含加减乘数的抽象函数）</span></span><br><span class="line">fn(num1,num2,demo) &#123;</span><br><span class="line">    <span class="keyword">return</span> demo(num1,num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义四个规则：加减乘除</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test3</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a*b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test4</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a/b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">15</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
+<h2 id="fn-和-fn-的区别【重要】"><a href="#fn-和-fn-的区别【重要】" class="headerlink" title="fn()  和 fn 的区别【重要】"></a>fn()  和 fn 的区别【重要】</h2><ul>
+<li><p><code>fn()</code>：调用函数。相当于获取了函数的返回值。</p>
+</li>
+<li><p><code>fn</code>：函数对象。相当于直接获取了函数对象。</p>
+</li>
+</ul>
+<h2 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h2><p>匿名函数如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"b = "</span> + b);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>立即执行函数如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"b = "</span> + b);</span><br><span class="line">&#125;)(<span class="number">123</span>, <span class="number">456</span>);</span><br></pre></td></tr></table></figure>
+<p>立即执行函数：函数定义完，立即被调用，这种函数叫做立即执行函数。</p>
+<p>立即执行函数往往只会执行一次。</p>
+<h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><p>在调用函数时，浏览器每次都会传递进两个隐含的参数：</p>
+<ul>
+<li><p>1.函数的上下文对象 this</p>
+</li>
+<li><p>2.<strong>封装实参的对象</strong> arguments</p>
+</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.smyhvae.com/20180315_0903.png" alt=""></p>
+<p>arguments是一个类数组对象，它也可以通过索引来操作数据，也可以获取长度。</p>
+<p>在调用函数时，我们所传递的实参都会在arguments中保存。</p>
+<p>arguments.length可以用来获取<strong>实参的长度</strong>。</p>
+<p>我们即使不定义形参，也可以通过arguments来使用实参（只不过比较麻烦）：arguments[0] 表示第一个实参、arguments[1] 表示第二个实参…</p>
+<p>arguments里边有一个属性叫做callee，这个属性对应一个函数对象，就是当前正在指向的函数的对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee == fun); <span class="comment">//打印结果为true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun(<span class="string">"hello"</span>);</span><br></pre></td></tr></table></figure>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">李嘉明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2018/12/21/03-JavaScript基础/07-函数/">http://yoursite.com/2018/12/21/03-JavaScript基础/07-函数/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/21/03-JavaScript基础/08-对象、作用域和this/"><i class="fa fa-chevron-left">  </i><span></span></a></div><div class="next-post pull-right"><a href="/2018/12/21/03-JavaScript基础/06-对象简介/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By 李嘉明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>

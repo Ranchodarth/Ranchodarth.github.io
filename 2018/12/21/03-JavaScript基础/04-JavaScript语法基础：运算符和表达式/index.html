@@ -1,0 +1,201 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="李嘉明"><meta name="copyright" content="李嘉明"><title></title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-JS基础语法——运算符和表达式"><span class="toc-number">1.</span> <span class="toc-text">title:JS基础语法——运算符和表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符的定义和分类"><span class="toc-number">2.1.</span> <span class="toc-text">运算符的定义和分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算数运算符"><span class="toc-number">3.</span> <span class="toc-text">算数运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数学运算符的运算规则"><span class="toc-number">3.1.</span> <span class="toc-text">数学运算符的运算规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算数运算符的注意事项"><span class="toc-number">3.2.</span> <span class="toc-text">算数运算符的注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#乘方"><span class="toc-number">3.3.</span> <span class="toc-text">乘方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开方"><span class="toc-number">3.4.</span> <span class="toc-text">开方</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一元运算符"><span class="toc-number">4.</span> <span class="toc-text">一元运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof"><span class="toc-number">4.1.</span> <span class="toc-text">typeof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正号"><span class="toc-number">4.2.</span> <span class="toc-text">正号 +</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#负号"><span class="toc-number">4.3.</span> <span class="toc-text">负号 -</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自增和自减"><span class="toc-number">5.</span> <span class="toc-text">自增和自减</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自增"><span class="toc-number">5.1.</span> <span class="toc-text">自增 ++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自减"><span class="toc-number">5.2.</span> <span class="toc-text">自减 --</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码举例"><span class="toc-number">5.3.</span> <span class="toc-text">代码举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">6.</span> <span class="toc-text">逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">6.1.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非布尔值的与或运算【重要】"><span class="toc-number">6.2.</span> <span class="toc-text">非布尔值的与或运算【重要】</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#赋值运算符"><span class="toc-number">7.</span> <span class="toc-text">赋值运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关系运算符"><span class="toc-number">8.</span> <span class="toc-text">关系运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非数值的比较"><span class="toc-number">8.1.</span> <span class="toc-text">非数值的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#符号的强调"><span class="toc-number">8.2.</span> <span class="toc-text">==符号的强调</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三元运算符"><span class="toc-number">9.</span> <span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的公众号"><span class="toc-number">10.</span> <span class="toc-text">我的公众号</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">李嘉明</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">48</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/"></a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">No title</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-21</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><hr>
+<h2 id="title-JS基础语法——运算符和表达式"><a href="#title-JS基础语法——运算符和表达式" class="headerlink" title="title:JS基础语法——运算符和表达式"></a>title:JS基础语法——运算符和表达式</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>比如说<code>+</code>、<code>*</code>、<code>/</code>、<code>(</code> 都是<strong>运算符</strong>，而<code>（3+5）/2</code>则是<strong>表达式</strong>。</p>
+<h3 id="运算符的定义和分类"><a href="#运算符的定义和分类" class="headerlink" title="运算符的定义和分类"></a>运算符的定义和分类</h3><p>运算符也叫操作符。通过运算符可以对一个或多个值进行运算，并获取运算结果。</p>
+<p>比如：typeof 就是运算符，可以来获得一个值的类型。它会将该值的类型以<strong>字符串</strong>的形式返回：number string boolean undefined object。</p>
+<p>注：运算符都是会返回结果的，而typeof这个运算符返回的结果就是变量的类型。那返回的结果的类型是什么呢？是字符串。</p>
+<p>运算符有很多分类，比如：</p>
+<ul>
+<li><p>算数运算符</p>
+</li>
+<li><p>逻辑运算符</p>
+</li>
+<li><p>自增运算符</p>
+</li>
+<li><p>赋值运算等</p>
+</li>
+</ul>
+<h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><p>常见的数学运算符有以下几种：</p>
+<p><img src="http://img.smyhvae.com/20180117_1651.png" alt=""></p>
+<p><strong>求余的举例</strong>：</p>
+<p>假设用户输入345，怎么分别得到3、4、5这三个数呢？</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">得到3的方法：345 除以100，得到3.45然后取整，得到3。即：parseInt(345/100)</span><br><span class="line"></span><br><span class="line">得到4的方法：345 除以100，余数是45，除以10，得到4.5，取整。即：parseInt(345 % 100 / 10)</span><br><span class="line"></span><br><span class="line">得到5的方法：345 除以10，余数就是5。即：345 % 10</span><br></pre></td></tr></table></figure>
+<h3 id="数学运算符的运算规则"><a href="#数学运算符的运算规则" class="headerlink" title="数学运算符的运算规则"></a>数学运算符的运算规则</h3><p>（1）先算乘除、后算加减。</p>
+<p>（2）小括号：能够影响计算顺序，且可以嵌套。没有中括号、没有大括号，只有小括号。</p>
+<p>（3）百分号：取余。只关心余数。</p>
+<p>举例1：(取余)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(3 % 5);</span><br></pre></td></tr></table></figure>
+<p>输出结果为3。</p>
+<p>举例2：（运算符优先级）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = 1 + 2 * 3 % 4 / 3;</span><br></pre></td></tr></table></figure>
+<p>结果分析：</p>
+<p>原式 =  1 + 6 % 4 / 3 = 1 + 2 / 3 = 1.66666666666666</p>
+<h3 id="算数运算符的注意事项"><a href="#算数运算符的注意事项" class="headerlink" title="算数运算符的注意事项"></a>算数运算符的注意事项</h3><p>（1）当对非Number类型的值进行运算（包括<code>+</code>、<code>-</code>、<code>*</code>、<code>/</code>）时，会将这些值转换为Number然后再运算。（注：<code>字符串 + Number</code>、<code>字符串 + 字符串</code>是特例，稍后再讲）</p>
+<p>比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">result1 = <span class="literal">true</span> + <span class="number">1</span>;  <span class="comment">// 2 = 1+ 1</span></span><br><span class="line"></span><br><span class="line">result2 = <span class="literal">true</span> + <span class="literal">false</span>; <span class="comment">// 1 = 1+ 0</span></span><br><span class="line"></span><br><span class="line">result3 = <span class="number">1</span> + <span class="literal">null</span>; <span class="comment">// 1 = 1+ 0</span></span><br><span class="line"></span><br><span class="line">result4 = <span class="number">100</span> - <span class="string">'1'</span> <span class="comment">// 99</span></span><br></pre></td></tr></table></figure>
+<p>（2）任何值和NaN做运算的结果都是NaN。</p>
+<p>（3）任何的值和字符串做加法运算，都会先转换为字符串，然后再做拼串操作。</p>
+<p>比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result1 = <span class="number">1</span> + <span class="number">2</span> + <span class="string">'3'</span>  <span class="comment">// 33</span></span><br><span class="line"></span><br><span class="line">result2 = <span class="string">'1'</span> + <span class="number">2</span> + <span class="number">3</span>; <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+<p>我们可以利用这一特点，来将一个任意的数据类型转换为String：我们只需要为任意的数据类型 + 一个 “” 即可将其转换为String。这是一种<strong>隐式</strong>的类型转换，由浏览器自动完成，实际上它也是调用String()函数。也就是说，<code>c = c + &quot;&quot;</code> 等价于 <code>c = String(c)</code>。</p>
+<p>（4）任何值做<code>-</code>、<code>*</code>、<code>/</code>运算时都会自动转换为Number。</p>
+<p>我们可以利用这一特点，为一个值<code>-0</code>、<code>*1</code>、<code>/1</code>来将其转换为Number。原理和Number()函数一样，使用起来更加简单。</p>
+<h3 id="乘方"><a href="#乘方" class="headerlink" title="乘方"></a>乘方</h3><p>如果想计算 <code>a 的 b 次方</code>，可以使用如下函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.pow(a, b);</span><br></pre></td></tr></table></figure>
+<p>Math的中文是“数学”，pow是“power 幂”。</p>
+<p><strong>举例1：</strong></p>
+<p><img src="http://img.smyhvae.com/20180117_1730.png" alt=""></p>
+<p>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = Math.pow(3, Math.pow(2, 2));</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
+<p><strong>举例2：</strong></p>
+<p><img src="http://img.smyhvae.com/20180117_1740.png" alt=""></p>
+<p>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = Math.pow(Math.pow(3, 2), 4);</span><br><span class="line">console.log(a);</span><br></pre></td></tr></table></figure>
+<h3 id="开方"><a href="#开方" class="headerlink" title="开方"></a>开方</h3><p>如果想计算数值a的开二次方，可以使用如下函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.sqrt(a);</span><br></pre></td></tr></table></figure>
+<p>sqrt即“square 开方”。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = Math.sqrt(36);</span><br></pre></td></tr></table></figure>
+<h2 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h2><p>一元运算符，只需要一个操作数。</p>
+<p>常见的一元运算符如下。</p>
+<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><p>typeof就是典型的一元运算符，因为后面只跟一个操作数。</p>
+<p>举例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'123'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// 打印结果：string</span></span><br></pre></td></tr></table></figure>
+<h3 id="正号"><a href="#正号" class="headerlink" title="正号 +"></a>正号 <code>+</code></h3><p>（1）正号不会对数字产生任何影响。比如说，<code>2</code>和<code>+2</code>是一样的。</p>
+<p>（2）我们可以对一个其他的数据类型使用<code>+</code>，来将其转换为number【小技巧】。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">true</span>;</span><br><span class="line">a = +a;   <span class="comment">// 注意这行代码的一元运算符操作</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a：'</span> + a);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'-----------------'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">'18'</span>;</span><br><span class="line">b = +b;   <span class="comment">// 注意这行代码的一元运算符操作</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'b：'</span> + b);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b);</span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<p><img src="http://img.smyhvae.com/20181221_2050.png" alt=""></p>
+<h3 id="负号"><a href="#负号" class="headerlink" title="负号 -"></a>负号 <code>-</code></h3><p>负号可以对数字进行取反。</p>
+<h2 id="自增和自减"><a href="#自增和自减" class="headerlink" title="自增和自减"></a>自增和自减</h2><h3 id="自增"><a href="#自增" class="headerlink" title="自增 ++"></a>自增 <code>++</code></h3><p>自增分成两种：<code>a++</code>和<code>++a</code>。</p>
+<p>（1）对于一个变量自增以后，原变量的值会<strong>立即</strong>自增1。也就是说，无论是 <code>a++</code> 还是<code>++a</code>，都会立即使原变量的值自增1。</p>
+<p>（2）<strong>我们要注意的是</strong>：<code>a</code>是变量，而<code>a++</code>和<code>++a</code>是<strong>表达式</strong>。</p>
+<p>那这两种自增，有啥区别呢？区别是：<code>a++</code> 和 <code>++a</code>的值不同：（也就是说，表达式的值不同）</p>
+<ul>
+<li><p><code>a++</code>的值等于原变量的值（a自增前的值）</p>
+</li>
+<li><p><code>++a</code>的值等于新值 （a自增后的值）</p>
+</li>
+</ul>
+<h3 id="自减"><a href="#自减" class="headerlink" title="自减 --"></a>自减 <code>--</code></h3><p>原理同上。</p>
+<h3 id="代码举例"><a href="#代码举例" class="headerlink" title="代码举例"></a>代码举例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n1=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> n2=<span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n = n1++; <span class="comment">//n1 = 11  n1++ = 10</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n='</span>+n);  <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n1='</span>+n1); <span class="comment">//11</span></span><br><span class="line"></span><br><span class="line">n = ++n1 <span class="comment">//n1 = 12  ++n1 =12</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n='</span>+n); <span class="comment">//12</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n1='</span>+n1); <span class="comment">//12</span></span><br><span class="line"></span><br><span class="line">n = n2--;<span class="comment">// n2=19 n2--=20</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n='</span>+n); <span class="comment">//20</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n2='</span>+n2); <span class="comment">//19</span></span><br><span class="line"></span><br><span class="line">n = --n2; <span class="comment">//n2=18 --n2 = 18</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n='</span>+n); <span class="comment">//18</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'n2='</span>+n2); <span class="comment">//18</span></span><br></pre></td></tr></table></figure>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算符有三个：</p>
+<ul>
+<li><p><code>&amp;&amp;</code>     与（且）：两个都为真，结果才为真。</p>
+</li>
+<li><p><code>||</code>    或：只要有一个是真，结果就是真。</p>
+</li>
+<li><p><code>!</code>        非：对一个布尔值进行取反。</p>
+</li>
+</ul>
+<p><strong>连比的写法：</strong></p>
+<p>来看看逻辑运算符连比的写法。</p>
+<p>举例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(3 &lt; 2 &amp;&amp; 2 &lt; 4);</span><br></pre></td></tr></table></figure>
+<p>输出结果为false。</p>
+<p>举例2：（判断一个人的年龄是否在18~60岁之间）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = prompt(<span class="string">"请输入您的年龄"</span>);</span><br><span class="line">alert(a&gt;=<span class="number">18</span> &amp;&amp; a&lt;= <span class="number">65</span>);</span><br></pre></td></tr></table></figure>
+<p>PS：上面的这个<code>a&gt;=18 &amp;&amp; a&lt;= 65</code>千万别想当然的写成<code>18&lt;= a &lt;= 65</code>啊，没有这种语法。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>（1）能参与逻辑运算的，都是布尔值。</p>
+<p>（2）JS中的<code>&amp;&amp;</code>属于<strong>短路</strong>的与，如果第一个值为false，则不会看第二个值。举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个值为true，会检查第二个值</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; alert(<span class="string">"看我出不出来！！"</span>);  <span class="comment">// 可以弹出 alert 框</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第一个值为false，不会检查第二个值</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; alert(<span class="string">"看我出不出来！！"</span>); <span class="comment">// 不会弹出 alert 框</span></span><br></pre></td></tr></table></figure>
+<p>（3）JS中的<code>||</code>属于<strong>短路</strong>的或，如果第一个值为true，则不会看第二个值。举例：</p>
+<p>（4）如果对<strong>非布尔值</strong>进行逻辑运算，则会<strong>先将其转换为布尔值</strong>，然后再操作。举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">a = !a;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// boolean</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子，我们可以看到，对非布尔值进行<code>!</code>操作之后，返回结果为布尔值。</p>
+<h3 id="非布尔值的与或运算【重要】"><a href="#非布尔值的与或运算【重要】" class="headerlink" title="非布尔值的与或运算【重要】"></a>非布尔值的与或运算【重要】</h3><blockquote>
+<p>之所以重要，是因为在实际开发中，我们经常用这种代码做容错处理。</p>
+</blockquote>
+<p>非布尔值进行<strong>与或运算</strong>时，会先将其转换为布尔值，然后再运算，但返回结果是<strong>原值</strong>。比如说：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="number">5</span> &amp;&amp; <span class="number">6</span>; <span class="comment">// 运算过程：true &amp;&amp; true;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'result：'</span> + result); <span class="comment">// 打印结果：6（也就是说最后面的那个值。）</span></span><br></pre></td></tr></table></figure>
+<p>上方代码可以看到，虽然运算过程为布尔值的运算，但返回结果是原值。</p>
+<p>那么，返回结果是哪个原值呢？我们来看一下。</p>
+<p><strong>与运算</strong>的返回结果：（以两个非布尔值的运算为例）</p>
+<ul>
+<li><p>如果第一个值为true，则必然返回第二个值（所以说，如果所有的值都为true，则返回的是最后一个值）</p>
+</li>
+<li><p>如果第一个值为false，则直接返回第一个值</p>
+</li>
+</ul>
+<p><strong>或运算</strong>的返回结果：（以两个非布尔值的运算为例）</p>
+<ul>
+<li><p>如果第一个值为true，则直接返回第一个值</p>
+</li>
+<li><p>如果第一个值为false，则返回第二个值</p>
+</li>
+</ul>
+<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><p>可以将符号右侧的值赋值给符号左侧的变量。</p>
+<p>举例：</p>
+<ul>
+<li><p><code>+=</code>。a += 5 等价于 a = a + 5</p>
+</li>
+<li><p><code>-=</code>。a -= 5 等价于 a = a - 5</p>
+</li>
+<li><p><code>*=</code>。a <em>= 5 等价于 a = a </em> 5</p>
+</li>
+<li><p><code>/=</code>。a /= 5 等价于 a = a / 5</p>
+</li>
+<li><p><code>%=</code>。a %= 5 等价于 a = a % 5</p>
+</li>
+</ul>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>通过关系运算符可以比较两个值之间的大小关系，如果关系成立它会返回true，如果关系不成立则返回false。</p>
+<p>关系运算符有很多种，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;	大于号</span><br><span class="line">&lt;	小于号</span><br><span class="line">&gt;= 	大于或等于</span><br><span class="line">&lt;=  小于或等于</span><br><span class="line">== 	等于</span><br><span class="line">=== 全等于</span><br><span class="line">!=	不等于</span><br><span class="line">!== 不全等于</span><br></pre></td></tr></table></figure>
+<p><strong>关系运算符，得到的结果都是布尔值：要么是true，要么是false</strong>。</p>
+<p>举例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = <span class="number">5</span> &gt; <span class="number">10</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="非数值的比较"><a href="#非数值的比较" class="headerlink" title="非数值的比较"></a>非数值的比较</h3><p>（1）对于非数值进行比较时，会将其转换为数字然后再比较。</p>
+<p>举例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> &gt; <span class="literal">true</span>); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> &gt;= <span class="literal">true</span>); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span> &gt; <span class="string">"0"</span>); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//console.log(10 &gt; null); //true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//任何值和NaN做任何比较都是false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">10</span> &lt;= <span class="string">"hello"</span>); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> &gt; <span class="literal">false</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>（2）特殊情况：如果符号两侧的值都是字符串时，<strong>不会</strong>将其转换为数字进行比较。比较两个字符串时，比较的是字符串的<strong>Unicode编码</strong>。【非常重要，这里是个大坑】</p>
+<p>比较字符编码时，是一位一位进行比较。如果两位一样，则比较下一位，所以借用它可以来对英文进行排序。</p>
+<p>PS：所以说，当你尝试去比较<code>&quot;123&quot;</code>和<code>&quot;56&quot;</code>这两个字符串时，你会发现，字符串”56”竟然比字符串”123”要大。也就是说，下面这样代码的打印结果，其实是true:（这个我们一定要注意，在日常开发中，很容易忽视）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比较两个字符串时，比较的是字符串的字符编码，所以可能会得到不可预期的结果</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"56"</span> &gt; <span class="string">"123"</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><strong>因此</strong>：当我们在比较两个字符串型的数字时，<strong>一定一定要先转型</strong>，比如 <code>parseInt()</code>。</p>
+<p>（3）任何值和NaN做任何比较都是false。</p>
+<h3 id="符号的强调"><a href="#符号的强调" class="headerlink" title="==符号的强调"></a><code>==</code>符号的强调</h3><p>注意<code>==</code>这个符号，它是<strong>判断是否等于</strong>，而不是赋值。</p>
+<p>（1）<code>==</code>这个符号，还可以验证字符串是否相同。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;我爱你中国&quot; == &quot;我爱你中国&quot;);		//输出结果为true</span><br></pre></td></tr></table></figure>
+<p>（2）<code>==</code>这个符号并不严谨，会将不同类型的东西，转为相同类型进行比较。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;6&quot; == 6);		//true</span><br><span class="line">console.log(0 == -0);       //true</span><br></pre></td></tr></table></figure>
+<p>（3）undefined 衍生自 null，所以这两个值做相等判断时，会返回true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span> == <span class="literal">null</span>);  <span class="comment">//打印结果：true。</span></span><br></pre></td></tr></table></figure>
+<p>（4）NaN不和任何值相等，包括他本身。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span> == <span class="literal">NaN</span>); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>问题：那如果我想判断  b的值是否为NaN，该怎么办呢？</p>
+<p>答案：可以通过isNaN()函数来判断一个值是否是NaN。如果 b 为 NaN，则返回true；否则返回false。</p>
+<p>（5）如果要保证<strong>完全等于</strong>，我们就要用三个等号<code>===</code>。全等不会做类型转换。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"6"</span> === <span class="number">6</span>);		<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">6</span> === <span class="number">6</span>);		<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>上述内容分析出：</p>
+<ul>
+<li><p><code>==</code>两个等号，不严谨，”6”和6是true。</p>
+</li>
+<li><p><code>===</code>三个等号，严谨，”6”和6是false。</p>
+</li>
+</ul>
+<p>另外还有：<strong><code>==</code>的反面是<code>!=</code>，<code>===</code>的反面是<code>!==</code>。</strong>。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span> != <span class="number">8</span>);	<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span> != <span class="string">"3"</span>);	<span class="comment">//false，因为3=="3"是true，所以反过来就是false。</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span> !== <span class="string">"3"</span>);	<span class="comment">//true，应为3==="3"是false，所以反过来是true。</span></span><br></pre></td></tr></table></figure>
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>三元运算符也叫条件运算符。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">条件表达式?语句1:语句2;</span><br></pre></td></tr></table></figure>
+<p><strong>执行的流程</strong>：</p>
+<p>条件运算符在执行时，首先对条件表达式进行求值：</p>
+<ul>
+<li><p>如果该值为true，则执行语句1，并返回执行结果</p>
+</li>
+<li><p>如果该值为false，则执行语句2，并返回执行结果</p>
+</li>
+</ul>
+<p>如果条件的表达式的求值结果是一个非布尔值，会将其转换为布尔值然后在运算。</p>
+<h2 id="我的公众号"><a href="#我的公众号" class="headerlink" title="我的公众号"></a>我的公众号</h2><p>想学习<font color="#0000ff"><strong>代码之外的软技能</strong></font>？不妨关注我的微信公众号：<strong>生命团队</strong>（id：<code>vitateam</code>）。</p>
+<p>扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：</p>
+<p><img src="http://img.smyhvae.com/2016040102.jpg" alt=""></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">李嘉明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2018/12/21/03-JavaScript基础/04-JavaScript语法基础：运算符和表达式/">http://yoursite.com/2018/12/21/03-JavaScript基础/04-JavaScript语法基础：运算符和表达式/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/21/03-JavaScript基础/05-JavaScript语法基础：循环控制（if语句&amp;for循环）/"><i class="fa fa-chevron-left">  </i><span></span></a></div><div class="next-post pull-right"><a href="/2018/12/21/03-JavaScript基础/03-JavaScript语法基础：强制类型转换/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By 李嘉明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>

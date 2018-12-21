@@ -1,0 +1,170 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="李嘉明"><meta name="copyright" content="李嘉明"><title></title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-BOM的常见内置方法和内置对象"><span class="toc-number">1.</span> <span class="toc-text">title:BOM的常见内置方法和内置对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM的介绍"><span class="toc-number">2.</span> <span class="toc-text">BOM的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript的组成"><span class="toc-number">2.1.</span> <span class="toc-text">JavaScript的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是BOM"><span class="toc-number">2.2.</span> <span class="toc-text">什么是BOM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#弹出系统对话框"><span class="toc-number">3.</span> <span class="toc-text">弹出系统对话框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开窗口、关闭窗口"><span class="toc-number">4.</span> <span class="toc-text">打开窗口、关闭窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location对象"><span class="toc-number">5.</span> <span class="toc-text">location对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#location对象的属性"><span class="toc-number">5.1.</span> <span class="toc-text">location对象的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#location对象的方法"><span class="toc-number">5.2.</span> <span class="toc-text">location对象的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#navigator对象"><span class="toc-number">6.</span> <span class="toc-text">navigator对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history对象"><span class="toc-number">7.</span> <span class="toc-text">history对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的公众号"><span class="toc-number">8.</span> <span class="toc-text">我的公众号</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">李嘉明</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">48</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/"></a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">No title</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-21</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><hr>
+<h2 id="title-BOM的常见内置方法和内置对象"><a href="#title-BOM的常见内置方法和内置对象" class="headerlink" title="title:BOM的常见内置方法和内置对象"></a>title:BOM的常见内置方法和内置对象</h2><h2 id="BOM的介绍"><a href="#BOM的介绍" class="headerlink" title="BOM的介绍"></a>BOM的介绍</h2><h3 id="JavaScript的组成"><a href="#JavaScript的组成" class="headerlink" title="JavaScript的组成"></a>JavaScript的组成</h3><p>JavaScript基础分为三个部分：</p>
+<ul>
+<li><p>ECMAScript：JavaScript的语法标准。包括变量、表达式、运算符、函数、if语句、for语句等。</p>
+</li>
+<li><p><strong>DOM</strong>：文档对象模型，操作<strong>网页上的元素</strong>的API。比如让盒子移动、变色、轮播图等。</p>
+</li>
+<li><p><strong>BOM</strong>：浏览器对象模型，操作<strong>浏览器部分功能</strong>的API。比如让浏览器自动滚动。</p>
+</li>
+</ul>
+<h3 id="什么是BOM"><a href="#什么是BOM" class="headerlink" title="什么是BOM"></a>什么是BOM</h3><p>BOM：Browser Object Model，浏览器对象模型。</p>
+<p><strong>BOM的结构图：</strong></p>
+<p><img src="http://img.smyhvae.com/20180201_2052.png" alt=""></p>
+<p>从上图也可以看出：</p>
+<ul>
+<li><p><strong>window对象是BOM的顶层(核心)对象</strong>，所有对象都是通过它延伸出来的，也可以称为window的子对象。</p>
+</li>
+<li><p>DOM越是BOM的一部分。</p>
+</li>
+</ul>
+<p><strong>window对象：</strong></p>
+<ul>
+<li><p><strong>window对象是JavaScript中的顶级对象</strong>。</p>
+</li>
+<li><p>全局变量、自定义函数也是window对象的属性和方法。</p>
+</li>
+<li><p>window对象下的属性和方法调用时，可以省略window。</p>
+</li>
+</ul>
+<p>下面讲一下 <strong>BOM 的常见内置方法和内置对象</strong>。</p>
+<h2 id="弹出系统对话框"><a href="#弹出系统对话框" class="headerlink" title="弹出系统对话框"></a>弹出系统对话框</h2><p>比如说，<code>alert(1)</code>是<code>window.alert(1)</code>的简写，因为它是window的子方法。</p>
+<p>系统对话框有三种：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert();	<span class="comment">//不同浏览器中的外观是不一样的</span></span><br><span class="line">confirm();  <span class="comment">//兼容不好</span></span><br><span class="line">prompt();	<span class="comment">//不推荐使用</span></span><br></pre></td></tr></table></figure>
+<h2 id="打开窗口、关闭窗口"><a href="#打开窗口、关闭窗口" class="headerlink" title="打开窗口、关闭窗口"></a>打开窗口、关闭窗口</h2><p>1、打开窗口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.open(url,target,param)</span><br></pre></td></tr></table></figure>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li><p>url：要打开的地址。</p>
+</li>
+<li><p>target：新窗口的位置。可以是：<code>_blank</code> 、<code>_self</code>、 <code>_parent</code> 父框架。</p>
+</li>
+<li><p>param：新窗口的一些设置。</p>
+</li>
+<li><p>返回值：新窗口的句柄。</p>
+</li>
+</ul>
+<p><strong>param</strong>这个参数，可以填各种各样的参数（），比如：</p>
+<ul>
+<li><p>name：新窗口的名称，可以为空</p>
+</li>
+<li><p>features：属性控制字符串，在此控制窗口的各种属性，属性之间以逗号隔开。</p>
+</li>
+<li><p>fullscreen= { yes/no/1/0 } 是否全屏，默认no</p>
+</li>
+<li><p>channelmode= { yes/no/1/0 } 是否显示频道栏，默认no</p>
+</li>
+<li><p>toolbar= { yes/no/1/0 } 是否显示工具条，默认no</p>
+</li>
+<li><p>location= { yes/no/1/0 } 是否显示地址栏，默认no。（有的浏览器不一定支持）</p>
+</li>
+<li><p>directories = { yes/no/1/0 } 是否显示转向按钮，默认no</p>
+</li>
+<li><p>status= { yes/no/1/0 } 是否显示窗口状态条，默认no</p>
+</li>
+<li><p>menubar= { yes/no/1/0 } 是否显示菜单，默认no</p>
+</li>
+<li><p>scrollbars= { yes/no/1/0 } 是否显示滚动条，默认yes</p>
+</li>
+<li><p>resizable= { yes/no/1/0 } 是否窗口可调整大小，默认no</p>
+</li>
+<li><p>width=number 窗口宽度（像素单位）</p>
+</li>
+<li><p>height=number 窗口高度（像素单位）</p>
+</li>
+<li><p>top=number 窗口离屏幕顶部距离（像素单位）</p>
+</li>
+<li><p>left=number 窗口离屏幕左边距离（像素单位）</p>
+</li>
+</ul>
+<p>各个参数之间用逗号隔开就行，但我们最好是把它们统一放到json里。</p>
+<p>2、关闭窗口：window.close()</p>
+<p>（1）和（2）的代码举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>点击我打开一个新的页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>点击我关闭本页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//新窗口 = window.open(地址,是否开新窗口,新窗口的各种参数);</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> a1 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"a"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> a2 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"a"</span>)[<span class="number">1</span>];</span></span><br><span class="line"><span class="javascript">    a1.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript"><span class="comment">//举例1： window.open("http://www.jd.com","_blank");</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> json = &#123;</span></span><br><span class="line"><span class="javascript">            <span class="string">"name"</span>: <span class="string">"helloworld"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"fullscreen"</span>: <span class="string">"no"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"location"</span>: <span class="string">"no"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"width"</span>: <span class="string">"100px"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"height"</span>: <span class="string">"100px"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"top"</span>: <span class="string">"100px"</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">"left"</span>: <span class="string">"100px"</span></span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.open(<span class="string">"http://www.baidu.com"</span>, <span class="string">"_blank"</span>, json); <span class="comment">//举例2</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">//关闭本页面</span></span></span><br><span class="line"><span class="javascript">    a2.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.close();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3、新窗口相关：</p>
+<ul>
+<li><p>新窗口.moveTo(5,5)</p>
+</li>
+<li><p>新窗口.moveBy()</p>
+</li>
+<li><p>新窗口.resizeTo()</p>
+</li>
+<li><p>window.resizeBy()</p>
+</li>
+</ul>
+<p>代码举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newWin = <span class="built_in">window</span>.open(<span class="string">"demo.html"</span>, <span class="string">"_blank"</span>, json);</span><br><span class="line">newWin.moveTo(<span class="number">500</span>, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p><code>window.location</code>可以简写成location。location相当于浏览器地址栏，可以将url解析成独立的片段。</p>
+<h3 id="location对象的属性"><a href="#location对象的属性" class="headerlink" title="location对象的属性"></a>location对象的属性</h3><ul>
+<li><p><strong>href</strong>：跳转</p>
+</li>
+<li><p>hash   返回url中#后面的内容，包含#</p>
+</li>
+<li><p>host    主机名，包括端口</p>
+</li>
+<li><p>hostname   主机名</p>
+</li>
+<li><p>pathname     url中的路径部分</p>
+</li>
+<li><p>protocol    协议 一般是http、https</p>
+</li>
+<li><p>search         查询字符串</p>
+</li>
+</ul>
+<p><strong>location.href属性举例</strong>：</p>
+<p><strong>举例1：</strong>点击盒子时，进行跳转。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>smyhvae<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    div.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        location.href = <span class="string">"http://www.baidu.com"</span>;   <span class="comment">//点击div时，跳转到指定链接</span></span></span><br><span class="line"><span class="javascript"> <span class="comment">//     window.open("http://www.baidu.com","_blank");  //方式二</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>举例2：5秒后自动跳转到百度</strong>。</p>
+<p>有时候，当我们访问一个不存在的网页时，会提示5秒后自动跳转到指定页面，此时就可以用到location。举例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        location.href = <span class="string">"http://www.baidu.com"</span>;</span></span><br><span class="line"><span class="undefined">    &#125;, 5000);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="location对象的方法"><a href="#location对象的方法" class="headerlink" title="location对象的方法"></a>location对象的方法</h3><ul>
+<li>location.assign()：改变浏览器地址栏的地址，并记录到历史中</li>
+</ul>
+<p>设置location.href  就会调用assign()。一般使用location.href 进行页面之间的跳转。</p>
+<ul>
+<li><p>location.replace()：替换浏览器地址栏的地址，不会记录到历史中</p>
+</li>
+<li><p>location.reload()：重新加载</p>
+</li>
+</ul>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>window.navigator 的一些属性可以获取客户端的一些信息。</p>
+<ul>
+<li><p>userAgent：系统，浏览器)</p>
+</li>
+<li><p>platform：浏览器支持的系统，win/mac/linux</p>
+</li>
+</ul>
+<p>举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(navigator.userAgent);</span><br><span class="line"><span class="built_in">console</span>.log(navigator.platform);</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20180201_2140.png" alt=""></p>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>1、历史记录管理</p>
+<p>2、后退：</p>
+<ul>
+<li><p>history.back()</p>
+</li>
+<li><p>history.go(-1)：0是刷新</p>
+</li>
+</ul>
+<p>3、前进：</p>
+<ul>
+<li><p>history.forward()</p>
+</li>
+<li><p>history.go(1)</p>
+</li>
+</ul>
+<p>用的不多。因为浏览器中已经自带了这些功能的按钮：</p>
+<p><img src="http://img.smyhvae.com/20180201_2146.png" alt=""></p>
+<h2 id="我的公众号"><a href="#我的公众号" class="headerlink" title="我的公众号"></a>我的公众号</h2><p>想学习<font color="#0000ff"><strong>代码之外的软技能</strong></font>？不妨关注我的微信公众号：<strong>生命团队</strong>（id：<code>vitateam</code>）。</p>
+<p>扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：</p>
+<p><img src="http://img.smyhvae.com/2016040102.jpg" alt=""></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">李嘉明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2018/12/21/03-JavaScript基础/16-BOM的常见内置方法和内置对象/">http://yoursite.com/2018/12/21/03-JavaScript基础/16-BOM的常见内置方法和内置对象/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/21/03-JavaScript基础/17-原型链/"><i class="fa fa-chevron-left">  </i><span></span></a></div><div class="next-post pull-right"><a href="/2018/12/21/03-JavaScript基础/15-事件委托/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By 李嘉明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>

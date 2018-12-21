@@ -1,0 +1,108 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content=""><meta name="author" content="李嘉明"><meta name="copyright" content="李嘉明"><title></title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title-JS基础语法——强制类型转换"><span class="toc-number">1.</span> <span class="toc-text">title:JS基础语法——强制类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他的简单类型-–-gt-String"><span class="toc-number">3.</span> <span class="toc-text">其他的简单类型 –&gt; String</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一：变量-””-或者-变量-”abc”"><span class="toc-number">3.1.</span> <span class="toc-text">方法一：变量+”” 或者 变量+”abc”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二：调用toString-方法"><span class="toc-number">3.2.</span> <span class="toc-text">方法二：调用toString()方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法三：使用String-函数"><span class="toc-number">3.3.</span> <span class="toc-text">方法三：使用String()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prompt-：用户的输入"><span class="toc-number">3.4.</span> <span class="toc-text">prompt()：用户的输入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他的数据类型-–-gt-Number"><span class="toc-number">4.</span> <span class="toc-text">其他的数据类型 –&gt; Number</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式一：使用Number-函数"><span class="toc-number">4.1.</span> <span class="toc-text">方式一：使用Number()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方式二：parseInt-：字符串-gt-整数【重要】"><span class="toc-number">4.2.</span> <span class="toc-text">方式二：parseInt()：字符串 -&gt; 整数【重要】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#parseFloat-：字符串-–-gt-浮点数（小数）"><span class="toc-number">4.3.</span> <span class="toc-text">parseFloat()：字符串 –&gt; 浮点数（小数）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转换为Boolean"><span class="toc-number">5.</span> <span class="toc-text">转换为Boolean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他进制的数字"><span class="toc-number">6.</span> <span class="toc-text">其他进制的数字</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">李嘉明</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">48</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/"></a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">No title</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-21</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><hr>
+<h2 id="title-JS基础语法——强制类型转换"><a href="#title-JS基础语法——强制类型转换" class="headerlink" title="title:JS基础语法——强制类型转换"></a>title:JS基础语法——强制类型转换</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>强制类型转换：将一个数据类型强制转换为其他的数据类型。</p>
+<p>类型转换主要指，将其他的数据类型，转换为：String、Number、Boolean。你会把某个数据类型转换成 null 或者 undefined 吗？不会，因为这样做，没有意义。</p>
+<h2 id="其他的简单类型-–-gt-String"><a href="#其他的简单类型-–-gt-String" class="headerlink" title="其他的简单类型 –&gt; String"></a>其他的简单类型 –&gt; String</h2><h3 id="方法一：变量-””-或者-变量-”abc”"><a href="#方法一：变量-””-或者-变量-”abc”" class="headerlink" title="方法一：变量+”” 或者 变量+”abc”"></a>方法一：变量+”” 或者 变量+”abc”</h3><p>举例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vat a = <span class="number">123</span>;  <span class="comment">// Number 类型</span></span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">''</span>);  <span class="comment">// 转换成 String 类型</span></span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">'haha'</span>);  <span class="comment">// 转换成 String 类型</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子中，打印的结果，都是字符串类型的数据。</p>
+<h3 id="方法二：调用toString-方法"><a href="#方法二：调用toString-方法" class="headerlink" title="方法二：调用toString()方法"></a>方法二：调用toString()方法</h3><p>举例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量.toSting()</span><br></pre></td></tr></table></figure>
+<p>【重要】该方法<strong>不会影响到原变量</strong>，它会将转换的结果返回。当然我们还可以直接写成<code>a = a.toString()</code>，这样的话，就是直接修改原变量。</p>
+<p>注意：null和undefined这两个值没有toString()方法，所以它们不能用方法二。如果调用，会报错。</p>
+<p>另外，Number类型的变量，在调用toString()时，可以在方法中传递一个整数作为参数。此时它将会把数字转换为指定的进制，如果不指定则默认转换为10进制。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">255</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对于Number调用toString()时可以在方法中传递一个整数作为参数</span></span><br><span class="line"><span class="comment">//此时它将会把数字转换为指定的进制,如果不指定则默认转换为10进制</span></span><br><span class="line">a = a.toString(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a);        <span class="comment">// 11111111</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
+<h3 id="方法三：使用String-函数"><a href="#方法三：使用String-函数" class="headerlink" title="方法三：使用String()函数"></a>方法三：使用String()函数</h3><p>格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String(变量)</span><br></pre></td></tr></table></figure>
+<p>使用String()函数做强制类型转换时：</p>
+<ul>
+<li><p>对于Number和Boolean而言，实际上就是调用toString()方法。</p>
+</li>
+<li><p>但是对于null和undefined，就不会调用toString()方法。它会将 null 直接转换为 “null”。将 undefined 直接转换为 “undefined”。</p>
+</li>
+</ul>
+<h3 id="prompt-：用户的输入"><a href="#prompt-：用户的输入" class="headerlink" title="prompt()：用户的输入"></a>prompt()：用户的输入</h3><p>我们在JS基础的第一篇里，就讲过，<code>prompt()</code>就是专门用来弹出能够让用户输入的对话框。重要的是：用户不管输入什么，都是字符串。</p>
+<h2 id="其他的数据类型-–-gt-Number"><a href="#其他的数据类型-–-gt-Number" class="headerlink" title="其他的数据类型 –&gt; Number"></a>其他的数据类型 –&gt; Number</h2><h3 id="方式一：使用Number-函数"><a href="#方式一：使用Number-函数" class="headerlink" title="方式一：使用Number()函数"></a>方式一：使用Number()函数</h3><p><strong>情况一：字符串 –&gt; 数字</strong></p>
+<ul>
+<li><p>1.如果字符串中是纯数字，则直接将其转换为数字。</p>
+</li>
+<li><p>2.如果字符串中有非数字的内容，则转换为NaN。（此处可以看到Number()函数的局限性）</p>
+</li>
+<li><p>3.如果字符串是一个空串或者是一个全是空格的字符串，则转换为0。</p>
+</li>
+</ul>
+<p><strong>情况二：布尔 –&gt; 数字</strong></p>
+<ul>
+<li><p>true 转成 1</p>
+</li>
+<li><p>false 转成 0</p>
+</li>
+</ul>
+<p><strong>情况三：null –&gt; 数字</strong></p>
+<ul>
+<li>结果为：0</li>
+</ul>
+<p><strong>情况四：undefined –&gt; 数字</strong></p>
+<ul>
+<li>结果为：NaN</li>
+</ul>
+<h3 id="方式二：parseInt-：字符串-gt-整数【重要】"><a href="#方式二：parseInt-：字符串-gt-整数【重要】" class="headerlink" title="方式二：parseInt()：字符串 -&gt; 整数【重要】"></a>方式二：<code>parseInt()</code>：字符串 -&gt; 整数【重要】</h3><blockquote>
+<p><code>parseInt()</code>是专门用来对付字符串的。</p>
+</blockquote>
+<p><strong>parseInt()的作用是将字符串中的有效的整数内容转为数字</strong>。parse表示“转换”，Int表示“整数”（注意<code>Int</code>的拼写）。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&quot;5&quot;);</span><br></pre></td></tr></table></figure>
+<p>得到的结果是数字5。</p>
+<p><strong>parseInt()还具有以下特性</strong>：</p>
+<p>（1）<strong>只保留字符串最开头的数字</strong>，后面的中文自动消失。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(parseInt(&quot;2017在公众号上写了6篇文章&quot;));  //打印结果：2017</span><br><span class="line"></span><br><span class="line">console.log(parseInt(&quot;2017.01在公众号上写了6篇文章&quot;));  //打印结果仍是：2017   （说明只会取整数）</span><br><span class="line"></span><br><span class="line">console.log(parseInt(&quot;aaa2017.01在公众号上写了6篇文章&quot;));  //打印结果：NaN</span><br></pre></td></tr></table></figure>
+<p>（2）自动带有截断小数的功能：<strong>取整，不四舍五入</strong>。</p>
+<p>例1：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">parseInt</span>(<span class="number">5.8</span>) + <span class="built_in">parseInt</span>(<span class="number">4.7</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<p>控制台输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9</span><br></pre></td></tr></table></figure>
+<p>例2：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">parseInt</span>(<span class="number">5.8</span> + <span class="number">4.7</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<p>控制台输出：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>（3）如果对<strong>非String</strong>使用parseInt()或parseFloat()，它会<strong>先将其转换为String</strong>然后再操作。</p>
+<p>比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(a));  <span class="comment">//打印结果：NaN （因为是先将a转为字符串"true"，然后然后再操作）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(b));  <span class="comment">//打印结果：NaN  （因为是先将b转为字符串"null"，然后然后再操作）    </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(c));  <span class="comment">//打印结果：NaN  （因为是先将b转为字符串"undefined"，然后然后再操作）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">168.23</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(d));  <span class="comment">//打印结果：168  （因为是先将c转为字符串"168.23"，然后然后再操作）</span></span><br></pre></td></tr></table></figure>
+<p>（4）带两个参数时，表示进制转换。</p>
+<h3 id="parseFloat-：字符串-–-gt-浮点数（小数）"><a href="#parseFloat-：字符串-–-gt-浮点数（小数）" class="headerlink" title="parseFloat()：字符串 –&gt; 浮点数（小数）"></a><code>parseFloat()</code>：字符串 –&gt; 浮点数（小数）</h3><blockquote>
+<p><code>parseFloat()</code>是专门用来对付字符串的。</p>
+</blockquote>
+<p>parseFloat()的作用是：将字符串转换为<strong>浮点数</strong>。</p>
+<p>parseFloat()和parseInt()的作用类似，不同的是，parseFloat()可以获得有效的小数部分。</p>
+<p>代码举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'123.456.789px'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(a)); <span class="comment">// 打印结果：123.456</span></span><br></pre></td></tr></table></figure>
+<h2 id="转换为Boolean"><a href="#转换为Boolean" class="headerlink" title="转换为Boolean"></a>转换为Boolean</h2><p>将其他的数据类型转换为Boolean，可以使用Boolean()函数。</p>
+<ul>
+<li><p>情况一：数字 –&gt; 布尔。除了0和NaN，其余的都是true。</p>
+</li>
+<li><p>情况二：字符串 —&gt; 布尔。除了空串，其余的都是true。</p>
+</li>
+<li><p>情况三：null和undefined都会转换为false。</p>
+</li>
+<li><p>情况四：对象也会转换为true。</p>
+</li>
+</ul>
+<p>PS：上面的这就种情况，很重要，开发中会经常用到。</p>
+<h2 id="其他进制的数字"><a href="#其他进制的数字" class="headerlink" title="其他进制的数字"></a>其他进制的数字</h2><ul>
+<li><p>16进制的数字，以<code>0x</code>开头</p>
+</li>
+<li><p>8进制的数字，以<code>0</code>开头</p>
+</li>
+<li><p>2进制的数字，<code>0b</code>开头（不是所有的浏览器都支持：chrome和火狐支持，IE不支持）</p>
+</li>
+</ul>
+<p>比如<code>070</code>这个字符串，如果我调用parseInt()转成数字时，有些浏览器会当成8进制解析，有些会当成10进制解析。</p>
+<p>所以，比较建议的做法是：可以在parseInt()中传递第二个参数，来指定数字的进制。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">"070"</span>;</span><br><span class="line"></span><br><span class="line">a = <span class="built_in">parseInt</span>(a,<span class="number">10</span>); <span class="comment">//转换成十进制</span></span><br></pre></td></tr></table></figure>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">李嘉明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2018/12/21/03-JavaScript基础/03-JavaScript语法基础：强制类型转换/">http://yoursite.com/2018/12/21/03-JavaScript基础/03-JavaScript语法基础：强制类型转换/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/21/03-JavaScript基础/04-JavaScript语法基础：运算符和表达式/"><i class="fa fa-chevron-left">  </i><span></span></a></div><div class="next-post pull-right"><a href="/2018/12/21/03-JavaScript基础/02-JavaScript语法基础：变量/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By 李嘉明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>

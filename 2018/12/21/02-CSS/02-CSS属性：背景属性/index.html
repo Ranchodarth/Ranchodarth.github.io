@@ -1,0 +1,148 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="CSS属性——background"><meta name="keywords" content=""><meta name="author" content="李嘉明"><meta name="copyright" content="李嘉明"><title>CSS属性——background | null</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#background系列属性"><span class="toc-number">1.</span> <span class="toc-text">background系列属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见背景属性"><span class="toc-number">1.1.</span> <span class="toc-text">常见背景属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-color：背景颜色的表示方法"><span class="toc-number">1.2.</span> <span class="toc-text">background-color：背景颜色的表示方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-repeat属性（重要）"><span class="toc-number">1.3.</span> <span class="toc-text">background-repeat属性（重要）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-position属性"><span class="toc-number">1.4.</span> <span class="toc-text">background-position属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-attachment属性"><span class="toc-number">1.5.</span> <span class="toc-text">background-attachment属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-综合属性"><span class="toc-number">1.6.</span> <span class="toc-text">background 综合属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的公众号"><span class="toc-number">2.</span> <span class="toc-text">我的公众号</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">李嘉明</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">48</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/"></a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">CSS属性——background</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-21</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="background系列属性"><a href="#background系列属性" class="headerlink" title="background系列属性"></a>background系列属性</h2><h3 id="常见背景属性"><a href="#常见背景属性" class="headerlink" title="常见背景属性"></a>常见背景属性</h3><p>CSS样式中，常见的背景属性有以下几种：（经常用到，要记住）</p>
+<ul>
+<li><p><code>background-color:#ff99ff;</code>  设置元素的背景颜色。</p>
+</li>
+<li><p><code>background-image:url(images/2.gif);</code> 将图像设置为背景。</p>
+</li>
+<li><p><code>background-repeat: no-repeat;</code>  设置背景图片是否重复及如何重复，默认平铺满。（重要）</p>
+<ul>
+<li><code>no-repeat</code>不要平铺；</li>
+<li><code>repeat-x</code>横向平铺；</li>
+<li><code>repeat-y</code>纵向平铺。</li>
+</ul>
+</li>
+<li><p><code>background-position:center top;</code> 设置背景图片在当前容器中的位置。</p>
+</li>
+<li><p><code>background-attachment:scroll;</code> 设置背景图片是否跟着滚动条一起移动。<br>属性值可以是：<code>scroll</code>（背景图片不动）、<code>fixed</code>（背景图片跟着滚动条一起移动）。注意属性值的含义不要搞反了，它的含义是根据滚动条来定义的。</p>
+</li>
+<li><p>另外还有一个简写属性叫做<code>background</code>，它的作用是：将上面的多个属性写在一个声明中。</p>
+</li>
+</ul>
+<p>上面这几个属性经常用到，需要记住。现在我们逐个进行讲解。</p>
+<h3 id="background-color：背景颜色的表示方法"><a href="#background-color：背景颜色的表示方法" class="headerlink" title="background-color：背景颜色的表示方法"></a>background-color：背景颜色的表示方法</h3><p>css2.1中，背景颜色的表示方法有三种：单词、rgb表示法、十六进制表示法。</p>
+<p>比如红色可以有下面的三种表示方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background-color: red;</span><br><span class="line">background-color: rgb(255,0,0);</span><br><span class="line">background-color: #ff0000;</span><br></pre></td></tr></table></figure>
+<p>下面分别介绍。</p>
+<p><strong>1、用英语单词来表示：</strong></p>
+<p>能够用英语单词来表述的颜色，都是简单颜色。比如红色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: red;</span><br></pre></td></tr></table></figure>
+<p><strong>2、rgb表示法：</strong></p>
+<p>rgb表示三原色“红”red、“绿”green、“蓝”blue。</p>
+<p>光学显示器中，每个像素都是由三原色的发光原件组成的，靠明亮度不同调成不同的颜色的。r、g、b的值，每个值的取值范围0~255，一共256个值。</p>
+<p>比如红色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: rgb(255,0,0);</span><br></pre></td></tr></table></figure>
+<p>黑色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: rgb(0,0,0);</span><br></pre></td></tr></table></figure>
+<p>颜色可以叠加，比如黄色就是红色和绿色的叠加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: rgb(255,255,0);</span><br></pre></td></tr></table></figure>
+<p><strong>3、十六进制表示法：</strong></p>
+<p>比如红色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color: #ff0000;</span><br></pre></td></tr></table></figure>
+<p>PS:所有用#开头的值，都是16进制的。</p>
+<p>这里，我们就要学会16进制与10进制之间的转换。下面举几个例子。</p>
+<p>问：16进制中28等于10进制多少？<br>答：2*16+8 = 40。</p>
+<p>16进制中的af等于10进制多少？<br>答：10 * 16 + 15 = 175</p>
+<p>所以，#ff0000就等于rgb(255,0,0)。</p>
+<p><code>background-color: #123456;</code>等价于<code>background-color: rgb(18,52,86);</code></p>
+<p><strong>十六进制可以简化为3位，所有#aabbcc的形式，能够简化为#abc</strong>。举例如下：</p>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color:#ff0000;</span><br></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color:#f00;</span><br></pre></td></tr></table></figure>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color:#112233;</span><br></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color:#123;</span><br></pre></td></tr></table></figure>
+<p>但是，比如下面这个是无法简化的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color:#222333;</span><br></pre></td></tr></table></figure>
+<p>再比如，下面这个也是无法简化的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-color:#123123;</span><br></pre></td></tr></table></figure>
+<p>几种常见的颜色简写可以记住。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#000   黑</span><br><span class="line">#fff   白</span><br><span class="line">#f00   红</span><br><span class="line">#222   深灰</span><br><span class="line">#333   灰</span><br><span class="line">#ccc   浅灰</span><br></pre></td></tr></table></figure>
+<h3 id="background-repeat属性（重要）"><a href="#background-repeat属性（重要）" class="headerlink" title="background-repeat属性（重要）"></a><code>background-repeat</code>属性（重要）</h3><p><code>background-repeat:no-repeat;</code>设置背景图片是否重复及如何重复，默认平铺满。属性值可以是：</p>
+<ul>
+<li><code>no-repeat</code>（不要平铺）</li>
+<li><code>repeat-x</code>（横向平铺）</li>
+<li><code>repeat-y</code>（纵向平铺）</li>
+</ul>
+<p>这个属性在开发的时候也是经常用到的。我们通过设置不同的属性值来看一下效果吧：</p>
+<p>（1）不加这个属性时：（即默认时）（背景图片会被平铺满）</p>
+<p><img src="http://img.smyhvae.com/2015-10-03-css-19.png" alt=""></p>
+<p>PS：padding的区域也是有背景图的。</p>
+<p>（2）属性值为<code>no-repeat</code>（不要平铺）时：</p>
+<p><img src="http://img.smyhvae.com/2015-10-03-css-20.png" alt=""></p>
+<p>（3）属性值为<code>repeat-x</code>（横向平铺）时：</p>
+<p><img src="http://img.smyhvae.com/2015-10-03-css-21.png" alt=""></p>
+<p>其实这种属性的作用还是很广的。举个例子，设计师设计一张宽度只有1px、颜色纵向渐变的图片，然后我们通过这个属性将其进行水平方向的平铺，就可以看到整个页面都是渐变的了。</p>
+<p>在搜索引擎上搜“<strong>平铺背景</strong>”，就可以发现，<strong>周期性的图片</strong>可以采用此种方法进行平铺。</p>
+<p>（4）属性值为<code>repeat-y</code>（纵向平铺）时：</p>
+<p><img src="http://img.smyhvae.com/2015-10-03-css-22.png" alt=""></p>
+<h3 id="background-position属性"><a href="#background-position属性" class="headerlink" title="background-position属性"></a><code>background-position</code>属性</h3><p><code>background-position</code>属性指的是<strong>背景定位</strong>属性。公式如下：</p>
+<p>在描述属性值的时候，有两种方式：用像素描述、用单词描述。下面分别介绍。</p>
+<p><strong>1、用像素值描述属性值：</strong></p>
+<p>格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-position:向右偏移量 向下偏移量;</span><br></pre></td></tr></table></figure>
+<p>属性值可以是正数，也可以是负数。比如：<code>100px 200px</code>、<code>-50px -120px</code>。</p>
+<p>举例如下：</p>
+<p><img src="http://img.smyhvae.com/20170812_1643.png" alt=""></p>
+<p><img src="http://img.smyhvae.com/20170812_1645.png" alt=""></p>
+<p><strong>2、用单词描述属性值：</strong></p>
+<p>格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-position: 描述左右的词 描述上下的词;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>描述左右的词：left、center、right</li>
+<li>描述上下的词：top 、center、bottom</li>
+</ul>
+<p>比如说，<code>right center</code>表示将图片放到右边的中间；<code>center center</code>表示将图片放到正中间。</p>
+<p>比如说，<code>bottom</code>表示图片的底边和父亲<strong>底边贴齐</strong>（好好理解）。</p>
+<p>位置属性有很多使用场景的。我们来举两个例子。</p>
+<p>场景1：（大背景图）</p>
+<p>打开“暗黑3 台湾”的官网<a href="https://tw.battle.net/d3/zh/" target="_blank" rel="noopener">https://tw.battle.net/d3/zh/</a>，可以看到官网的效果是比较炫的：</p>
+<p><img src="http://img.smyhvae.com/20170812_1945.jpg" alt=""></p>
+<p>检查网页后，找到网站背景图片的url：<a href="https://tw.battle.net/d3/static/images/layout/bg-repeat.jpg" target="_blank" rel="noopener">https://tw.battle.net/d3/static/images/layout/bg-repeat.jpg</a>。背景图如下：</p>
+<p><img src="http://img.smyhvae.com/20170812_1950.jpg" alt=""></p>
+<p>实际上，我们是通过把这张图片作为网站的背景图来达到显示效果的。只需要给body标签加如下属性即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    background-image: url(/Users/smyhvae/Dropbox/img/20170812_1950.jpg);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-position: center top;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上方代码中，如果没加<code>background-position</code>这个属性，背景图会默认处于浏览器的左上角（显得很丑）；加了此属性之后，图片在水平方向就位于浏览器的中间了。</p>
+<p>场景2：（通栏banner）</p>
+<p>很多网站的首页都会有banner图（网站最上方的全屏大图叫做「<strong>通栏banner</strong>」），这种图要求横向的宽度特别大。比如说，设计师给你一张1920*465的超大banner图，如果我们把这个banner图作为img标签直接插入网页中，会有问题的：首先，图片不在网页的中间；其次，肯定会出现横向滚动条。如下图所示：</p>
+<p><img src="http://img.smyhvae.com/20170813_1102.gif" alt=""></p>
+<p>正确的做法是，将banner图作为div的背景图，这样的话，背景图超出div的部分，会自动移溢出。需要给div设置的属性如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">465px</span>;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(http://img.smyhvae.com/20170813_1053.jpg);</span><br><span class="line">    <span class="attribute">background-position</span>: center top;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上方代码中，我们给div设置height（高度为banner图的高度），不需要设置宽度（因为宽度会自动霸占整行）。效果如下：</p>
+<p><img src="http://img.smyhvae.com/20170813_1119.gif" alt=""></p>
+<p>上图可以看出，将banner图作为div的背景后，banner图会永远处于网页的正中间（水平方向来看）。</p>
+<h3 id="background-attachment属性"><a href="#background-attachment属性" class="headerlink" title="background-attachment属性"></a>background-attachment属性</h3><ul>
+<li><code>background-attachment:scroll;</code> 设置背景图片是否固定。属性值可以是：<ul>
+<li><code>fixed</code>（背景就会被固定住，不会被滚动条滚走）。</li>
+<li><code>scroll</code>（与fixed属性相反，默认属性）</li>
+</ul>
+</li>
+</ul>
+<p><code>background-attachment:fixed;</code>的效果如下：</p>
+<p><img src="http://img.smyhvae.com/20170813_1158.gif" alt=""></p>
+<h3 id="background-综合属性"><a href="#background-综合属性" class="headerlink" title="background 综合属性"></a>background 综合属性</h3><p>background属性和border一样，是一个综合属性，可以将多个属性写在一起。(在<a href="http://www.cnblogs.com/smyhvae/p/7256371.html" target="_blank" rel="noopener">盒子模型</a>这篇文章中专门讲到border)</p>
+<p>举例1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:red url(1.jpg) no-repeat 100px 100px fixed;</span><br></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">background-color:red;</span><br><span class="line">background-image:url(1.jpg);</span><br><span class="line">background-repeat:no-repeat;</span><br><span class="line">background-position:100px 100px;</span><br><span class="line">background-attachment:fixed;</span><br></pre></td></tr></table></figure>
+<p>以后，我们可以用小属性层叠掉大属性。</p>
+<p>上面的属性中，可以任意省略其中的一部分。</p>
+<p>比如说，对于下面这样的属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: blue url(images/wuyifan.jpg) no-repeat 100px 100px;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://img.smyhvae.com/20170813_1515.png" alt=""></p>
+<p>PS：以后的CSS3内容中，我们会接触到更多的background属性： background-origin、background-clip、background-size（在CSS2.1背景图片是不能调整尺寸，IE9开始兼容）、多背景。</p>
+<h2 id="我的公众号"><a href="#我的公众号" class="headerlink" title="我的公众号"></a>我的公众号</h2><p>想学习<font color="#0000ff"><strong>代码之外的软技能</strong></font>？不妨关注我的微信公众号：<strong>生命团队</strong>（id：<code>vitateam</code>）。</p>
+<p>扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：</p>
+<p><img src="http://img.smyhvae.com/2016040102.jpg" alt=""></p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">李嘉明</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2018/12/21/02-CSS/02-CSS属性：背景属性/">http://yoursite.com/2018/12/21/02-CSS/02-CSS属性：背景属性/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/21/02-CSS/03-CSS样式表和选择器/"><i class="fa fa-chevron-left">  </i><span>CSS样式表和选择器</span></a></div><div class="next-post pull-right"><a href="/2018/12/21/02-CSS/01-CSS属性：字体属性和文本属性/"><span></span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By 李嘉明</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>
